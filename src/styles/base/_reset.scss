@@ -1,0 +1,29 @@
+// === RESET CSS === //
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/** Can determinate what type of color schema is determinate on your device */
+// html {
+//   color-scheme: dark light;
+// }
+
+body {
+  min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
