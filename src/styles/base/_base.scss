@@ -1,5 +1,17 @@
+@use "./mixins" as *;
+
 :root {
   font-size: 10px;
   font-family: "Public Sans", sans-serif;
+  background-color: #f1f2f6;
   color: #262626;
+}
+
+.container {
+  width: min(100% - 3.2rem, 111rem);
+  margin-inline: auto;
+
+  @include mq(tablet) {
+    width: min(100% - 4.1rem, 111rem);
+  }
 }
