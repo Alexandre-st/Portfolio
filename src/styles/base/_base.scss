@@ -8,7 +8,7 @@
 }
 
 .container {
-  width: min(100% - 3.2rem, 111rem);
+  width: min(100% - 4rem, 111rem);
   margin-inline: auto;
 
   @include mq(tablet) {
