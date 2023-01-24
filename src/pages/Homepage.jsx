@@ -6,7 +6,7 @@ const Homepage = () => {
           <img src="" alt="This is a picture of me" />
         </picture>
         <div className="hero-text">
-          <h1>Salut c’est Alexandre. Développeur Front-End</h1>
+          <h1 className="hero-text-title">Salut c’est Alexandre. Développeur Front-End</h1>
           <p className="hero-text-text">
             Je suis un développeur front-end junior à la recherche d’une
             entreprise passionnante. Je me concentre sur l’écriture accessible
@@ -57,6 +57,6 @@ const Homepage = () => {
       </section>
     </main>
   );
-}
+};
  
 export default Homepage;
