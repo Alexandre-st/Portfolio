@@ -1,0 +1,51 @@
+@use "../base/mixins" as *;
+
+.contact-hero {
+  &-about {
+    margin-top: 3.2rem;
+  }
+}
+
+.contact-form {
+  margin-top: 4rem;
+}
+
+.form-content {
+  margin-top: 3.2rem;
+
+  &-field {
+    display: flex;
+    flex-direction: column;
+
+    &-label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 3rem;
+      color: #33323d;
+      opacity: 0.8;
+    }
+
+    &-input {
+      @include text-form;
+      padding-left: 1.6rem;
+      height: 4.8rem;
+      margin-top: 0.8rem;
+    }
+  }
+}
+
+input,
+textarea {
+  &:focus-visible {
+    border: 1px solid #5fb4a2;
+  }
+
+  // Avoid the yellow autofill from the input form
+  &:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #ebebec inset;
+  }
+
+  &:invalid {
+    border: 1px solid #f43030;
+  }
+}

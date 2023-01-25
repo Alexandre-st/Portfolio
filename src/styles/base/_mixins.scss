@@ -16,3 +16,15 @@
     }
   }
 }
+
+@mixin text-form {
+  width: 100%;
+  font-size: 1.3rem;
+  line-height: 3rem;
+  background-color: #ebebec;
+
+  &::placeholder {
+    color: #33323d;
+    opacity: 0.4;
+  }
+}
