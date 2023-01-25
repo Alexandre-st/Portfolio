@@ -25,6 +25,28 @@ li {
   list-style: none;
 }
 
+input,
+textarea,
+select,
+button {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 0;
+  outline: none;
+  border: none;
+  background: none;
+  color: inherit;
+}
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+input[type="submit"]:hover,
+button:hover {
+  cursor: pointer;
+}
+
 a {
   display: block;
   color: inherit;

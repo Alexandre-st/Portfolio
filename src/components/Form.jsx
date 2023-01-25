@@ -32,10 +32,14 @@ const Form = () => {
 
   return (
     <section className="contact-form">
-      <h2>Contactez-moi</h2>
+      <h2 className="contact-form-title">Contactez-moi</h2>
       <form className="form-content" onSubmit={formik.handleSubmit}>
         <div className="form-content-field">
-          <label htmlFor="name">Nom</label>
+          <label 
+            className="form-content-field-label" htmlFor="name"
+          >
+            Nom
+          </label>
           <input
             type="text"
             name="name"
@@ -50,7 +54,9 @@ const Form = () => {
           ) : null}
         </div>
         <div className="form-content-field">
-          <label htmlFor="email">Email</label>
+          <label className="form-content-field-label" htmlFor="email">
+            Email
+          </label>
           <input
             type="text"
             name="email"
@@ -65,7 +71,11 @@ const Form = () => {
           ) : null}
         </div>
         <div className="form-content-field">
-          <label htmlFor="message">Message</label>
+          <label 
+            className="form-content-field-label" htmlFor="message"
+          >
+            Message
+          </label>
           <textarea
             type="text"
             name="message"
@@ -80,7 +90,7 @@ const Form = () => {
             <span className="form-content-error">{formik.errors.message}</span>
           ) : null}
         </div>
-        <button 
+        <button
           type="submit"
           className="button form-content-button"
           disabled={!(formik.isValid && formik.dirty)}
