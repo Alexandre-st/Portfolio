@@ -15,7 +15,7 @@
   }
 
   &-text {
-    margin-top: 2.4rem;
+    margin-top: 6rem;
 
     @include mq(tablet) {
       margin-top: 0;
@@ -23,23 +23,17 @@
     }
 
     &-title {
-      margin-bottom: 2.5rem;
-      font-size: 2.5rem;
-      line-height: 3.5rem;
-      letter-spacing: -0.357143px;
+      @include big-title;
+      margin-bottom: 3.2rem;
       display: flex;
       flex-direction: column;
 
       @include mq(laptop) {
         margin-bottom: 3.5rem;
-        line-height: 5.5rem;
-        font-size: 3.5rem;
       }
 
       @include mq(desktop) {
         margin-bottom: 5.5rem;
-        line-height: 6.5rem;
-        font-size: 4.5rem;
       }
 
       &-span {
@@ -53,26 +47,51 @@
   }
 }
 
+// Skills Part
 .skills {
-  margin-top: 9.6rem;
+  margin-top: 8rem;
+
+  @include mq(tablet) {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+  }
+
+  @include mq(laptop) {
+    margin-top: 10rem;
+  }
 
   &-text {
+    @include mq(tablet) {
+      max-width: 39rem;
+    }
+
+    @include mq(laptop) {
+      max-width: 55.2rem;
+    }
+
     &-title {
-      margin-bottom: 3.2rem;
+      margin-bottom: 3.5rem;
     }
   }
 
   &-content {
     margin-top: 3.2rem;
 
+    @include mq(laptop) {
+      margin-top: 6rem;
+    }
+
     &-list {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
+      font-size: 1.4rem;
+      line-height: 2rem;
 
       &-li {
-        background-color: #dfe4ea;
-        padding: 0.5rem;
+        background-color: #f1f2f6;
+        padding: 0.5rem 1rem;
         border-radius: 5px;
 
         &:hover {

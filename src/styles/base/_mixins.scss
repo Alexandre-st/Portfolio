@@ -17,6 +17,22 @@
   }
 }
 
+@mixin big-title {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  letter-spacing: -0.357143px;
+
+  @include mq(laptop) {
+    line-height: 5.5rem;
+    font-size: 3.5rem;
+  }
+
+  @include mq(desktop) {
+    line-height: 6.5rem;
+    font-size: 4.5rem;
+  }
+}
+
 @mixin text-form {
   width: 100%;
   font-size: 1.3rem;
