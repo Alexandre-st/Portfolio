@@ -2,8 +2,8 @@
 
 :root {
   font-size: 10px;
-  font-family: "Public Sans", sans-serif;
-  background-color: #f1f2f6;
+  font-family: "Mulish", sans-serif;
+  background-color: #fff;
   color: #262626;
 }
 
@@ -12,6 +12,31 @@
   margin-inline: auto;
 
   @include mq(tablet) {
-    width: min(100% - 4.1rem, 111rem);
+    width: min(100% - 6rem, 111rem);
+  }
+}
+
+.big-title {
+  font-weight: 700;
+  @include big-title;
+  color: #33323d;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  color: #262626;
+  opacity: 0.9;
+}
+
+.button {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 2px;
+
+  &-white {
+    @include button;
+    width: 20.2rem;
   }
 }
