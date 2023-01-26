@@ -60,3 +60,23 @@
     font-style: italic;
   }
 }
+
+@mixin section-margin {
+  margin-top: 8rem;
+
+  @include mq(laptop) {
+    margin-top: 10rem;
+  }
+}
+
+@mixin content-margin {
+  margin-bottom: 3.2rem;
+
+  @include mq(laptop) {
+    margin-bottom: 3.5rem;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 5.5rem;
+  }
+}
