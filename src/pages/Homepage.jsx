@@ -63,7 +63,7 @@ const Homepage = () => {
         </div>
       </section>
       <section className="work">
-        <h3>Mes Projets</h3>
+        <h3 className="work-title big-title">Mes Projets</h3>
       </section>
     </main>
   );
