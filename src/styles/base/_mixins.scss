@@ -28,3 +28,19 @@
     opacity: 0.4;
   }
 }
+
+@mixin button {
+  border: 1px solid #33323d;
+  padding: 17px 0 17px 0;
+  height: 4.8rem;
+  text-align: center;
+  color: #33323d;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #33323d;
+    transition: all 0.4s ease-in-out;
+    color: #ffffff;
+    font-style: italic;
+  }
+}

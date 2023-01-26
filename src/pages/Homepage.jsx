@@ -1,13 +1,18 @@
+import Me from "../assets/images/Profil_Picture.jpg";
+
 const Homepage = () => {
   return (
     <main className="container">
       <section className="hero">
-        <picture className="hero-img">
-          <img src="" alt="This is a picture of me" />
-        </picture>
+        <div className="hero-img">
+          <img src={Me} alt="This is a picture of me" />
+        </div>
         <div className="hero-text">
-          <h1 className="hero-text-title">Salut c’est Alexandre. Développeur Front-End</h1>
-          <p className="hero-text-text">
+          <h1 className="hero-text-title">
+            <span>Salut c’est Alexandre.</span>
+            <span className="hero-text-title-span">Développeur Front-End</span>
+          </h1>
+          <p className="hero-text-text text">
             Je suis un développeur front-end junior à la recherche d’une
             entreprise passionnante. Je me concentre sur l’écriture accessible
             d’un code HTML, l’utilisation de pratiques modernes du CSS et
@@ -16,7 +21,6 @@ const Homepage = () => {
             à tous les outils demandés. Je suis situé à Paris, et possède aussi
             de l’expérience en remote.
           </p>
-          <button className="hero-text-button">Go to portfolio</button>
         </div>
       </section>
       <section className="skills">
