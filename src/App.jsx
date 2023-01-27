@@ -3,6 +3,7 @@ import Footer from "./layouts/Footer";
 import Header from "./layouts/Header";
 import Contact from "./pages/Contact";
 import Homepage from "./pages/Homepage";
+import Portfolio from "./pages/Portfolio";
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={<Homepage />} />
+        <Route path='/portfolio' element={<Portfolio />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
