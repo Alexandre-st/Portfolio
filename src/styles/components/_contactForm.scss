@@ -1,11 +1,5 @@
 @use "../base/mixins" as *;
 
-.contact-hero {
-  &-about {
-    margin-top: 3.2rem;
-  }
-}
-
 .contact-form {
   margin-top: 4rem;
 }
@@ -16,6 +10,10 @@
   &-field {
     display: flex;
     flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 2.4rem;
+    }
 
     &-label {
       font-size: 1.3rem;
@@ -32,6 +30,27 @@
       margin-top: 0.8rem;
     }
   }
+
+  // To color the input border
+  &-error {
+    color: #f43030;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  &-button {
+    margin-top: 3rem;
+    margin-left: auto;
+  }
+}
+
+textarea {
+  min-height: 9.6rem;
+  resize: none;
+  padding-top: 1rem;
 }
 
 input,
