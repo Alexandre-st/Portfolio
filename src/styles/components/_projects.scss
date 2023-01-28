@@ -1,0 +1,64 @@
+@use "../base/mixins" as *;
+
+.projects {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    &:not(:first-child) {
+      margin-top: 7.2rem;
+    }
+
+    @include mq(tablet) {
+      flex-direction: row;
+      align-items: center;
+      gap: 6.9rem;
+
+      &-reverse {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include mq(laptop) {
+      gap: 12.5rem;
+    }
+  }
+
+  &-background {
+    max-height: 28.8rem;
+    overflow: hidden;
+
+    @include mq(tablet) {
+      max-height: 31.4rem;
+    }
+
+    @include mq(laptop) {
+      max-height: 50rem;
+    }
+
+    img {
+      width: 79.8%;
+      margin: auto;
+      position: relative;
+      top: 2.88rem;
+
+      @include mq(tablet) {
+        max-width: 33.9rem;
+      }
+
+      @include mq(laptop) {
+        max-width: 54rem;
+      }
+    }
+  }
+
+  &-content {
+    @include mq(tablet) {
+      flex: 110;
+    }
+
+    &-title {
+      margin-top: 3rem;
+    }
+  }
+}

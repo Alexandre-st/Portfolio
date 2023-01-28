@@ -8,7 +8,9 @@
 
 // == PAGES == //
 @use "./pages/homepage";
+@use "./pages/portfolio";
 @use "./pages/contact";
 
 // == COMPONENTS == //
 @use "./components/contactForm";
+@use "./components/projects";
