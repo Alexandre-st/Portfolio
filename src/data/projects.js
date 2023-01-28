@@ -1,8 +1,12 @@
+import archStudio from "../assets/images/projects/ArchStudio.png";
+import github from "../assets/images/projects/github-user.png";
+import typemaster from "../assets/images/projects/typemaster.png";
+
 export const projects = [
   {
     id: "0",
-    styleName: "project-container",
-    image: "../assets/images/projects/ArchStudio.png",
+    styleName: "projects-container",
+    image: archStudio,
     color: "#1b1d23",
     title: "Arch Studio",
     infos: "Ce projet m'a permis de construire un site web multi-page en faisant en sorte qu'il corresponde au design fourni. J'ai utilisé React, Sass et mise en place des différentes cartes avec LeafletJS.",
@@ -10,7 +14,7 @@ export const projects = [
     technos: ["REACT", "REACT-ROUTER", "SASS", "FORMIK"],
     link: "https://alexandre-st-arch-studio.netlify.app",
     github: "https://github.com/Alexandre-st/Arch-studio-multipage-website",
-    desc: "Ce projet était un challenge front-end de la plateforme <b>Frontend Mentor</b>. Ce site vitrine à destination d'un studio d'architecture.",
+    desc: "Ce projet était un challenge front-end de la plateforme <b>Frontend Mentor</b>. Ce site vitrine est à destination d'un studio d'architecture.",
     preview1: "",
     preview2: "",
     prevProject: "",
@@ -18,8 +22,8 @@ export const projects = [
   },
   {
     id: "1",
-    styleName: "project-container project-container-reverse",
-    image: "../assets/images/projects/github-user.png",
+    styleName: "projects-container projects-container-reverse",
+    image: github,
     color: "#1e2b48",
     title: "DevFinder",
     infos: "Une simple application React qui récupère des données de Github pour permettre aux utilisateurs de rechercher les informations du profil Github souhaité.",
@@ -35,8 +39,8 @@ export const projects = [
   },
   {
     id: "2",
-    styleName: "project-container",
-    image: "../assets/images/projects/typemaster.png",
+    styleName: "projects-container",
+    image: typemaster,
     color: "#f16718",
     title: "Typemaster",
     infos: "Une simple page en HTML et Scss avec un fort accent sur CSS Flexbox",
@@ -52,7 +56,7 @@ export const projects = [
   },
   {
     id: "3",
-    styleName: "project-container project-container-reverse",
+    styleName: "projects-container projects-container-reverse",
     image: "",
     color: "",
     title: "",
@@ -69,7 +73,7 @@ export const projects = [
   },
   {
     id: "4",
-    styleName: "project-container",
+    styleName: "projects-container",
     image: "",
     color: "",
     title: "Designo",
@@ -86,7 +90,7 @@ export const projects = [
   },
   {
     id: "5",
-    styleName: "project-container project-container-reverse",
+    styleName: "projects-container projects-container-reverse",
     image: "",
     color: "",
     title: "",
@@ -103,7 +107,7 @@ export const projects = [
   },
   {
     id: "6",
-    styleName: "project-container",
+    styleName: "projects-container",
     image: "",
     color: "",
     title: "Designo",
@@ -120,7 +124,7 @@ export const projects = [
   },
   {
     id: "7",
-    styleName: "project-container project-container-reverse",
+    styleName: "projects-container projects-container-reverse",
     image: "",
     color: "",
     title: "",
