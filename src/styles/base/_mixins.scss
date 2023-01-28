@@ -36,7 +36,6 @@
 @mixin text-form {
   width: 100%;
   font-size: 1.3rem;
-  line-height: 3rem;
   background-color: #ebebec;
 
   &::placeholder {
@@ -57,7 +56,6 @@
     background-color: #33323d;
     transition: all 0.4s ease-in-out;
     color: #ffffff;
-    font-style: italic;
   }
 }
 

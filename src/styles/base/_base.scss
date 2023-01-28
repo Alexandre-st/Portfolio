@@ -39,6 +39,17 @@
     @include button;
     width: 20.2rem;
   }
+
+  &-form {
+    &:disabled {
+      background-color: #ffffff;
+      border: 1px solid #33323d;
+      font-style: normal;
+      color: #33323d;
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+  }
 }
 
 .border {

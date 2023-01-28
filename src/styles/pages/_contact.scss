@@ -1,0 +1,26 @@
+@use "../base/mixins" as *;
+
+.contact {
+  &-hero {
+    @include mq(laptop) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-about {
+      margin-top: 3.2rem;
+
+      @include mq(laptop) {
+        margin-top: 0;
+        flex: 1 1;
+        max-width: 63.5rem;
+      }
+    }
+
+    &-link {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+  }
+}

@@ -32,7 +32,7 @@ const Form = () => {
 
   return (
     <section className="contact-form">
-      <h2 className="contact-form-title">Contactez-moi</h2>
+      <h2 className="contact-form-title big-title">Contactez-moi</h2>
       <form className="form-content" onSubmit={formik.handleSubmit}>
         <div className="form-content-field">
           <label 
@@ -92,10 +92,10 @@ const Form = () => {
         </div>
         <button
           type="submit"
-          className="button form-content-button"
+          className="button button-white button-form form-content-button"
           disabled={!(formik.isValid && formik.dirty)}
         >
-          Envoyer le message
+          Envoyer
         </button>
       </form>
     </section>
