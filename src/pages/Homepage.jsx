@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Me from "../assets/images/Profil_Picture.jpg";
+import { projects } from "../data/projects";
 
 const Homepage = () => {
   return (
@@ -64,6 +66,25 @@ const Homepage = () => {
       </section>
       <section className="work">
         <h3 className="work-title big-title">Mes Projets</h3>
+            <div className="work-content">
+        {projects.filter(project => project.id < 3).map(element => {
+          return (
+            <div
+              className="work-content-element"
+              style={{ background: element.color }}
+              key={element.id}
+            >
+              <img loading="lazy" src={element.image} alt={element.name} />
+            </div>
+          );
+        })}
+            </div>
+             <Link
+        className="button button-white work-button"
+        to="/portfolio"
+      >
+        Un peu plus ...
+      </Link>
       </section>
     </main>
   );
