@@ -22,9 +22,9 @@ const Contact = () => {
             l'objectif.
           </p>
           <div className="contact-hero-link">
-            <Link to="https://github.com/Alexandre-st">
+            <a target="_blank" href="https://github.com/Alexandre-st">
               <img src={github} alt="Lien pour accéder à mon Github" />
-            </Link>
+            </a>
             <Link to="https://twitter.com/a_saintprix">
               <img src={twitter} alt="Lien pour accéder à mon Twitter" />
             </Link>

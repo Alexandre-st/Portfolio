@@ -98,4 +98,34 @@
   &-title {
     @include content-margin;
   }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    overflow: hidden;
+    resize: horizontal;
+
+    &-element {
+      height: 20rem;
+      flex: 1 0 20rem;
+      overflow: hidden;
+
+      @include mq(laptop) {
+        height: 30rem;
+      }
+
+      img {
+        position: relative;
+        top: 2.88rem;
+        width: 79.8%;
+        margin: auto;
+      }
+    }
+  }
+
+  &-button {
+    margin-left: auto;
+    margin-top: 4rem;
+  }
 }
