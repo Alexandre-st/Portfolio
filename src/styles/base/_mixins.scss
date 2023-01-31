@@ -22,14 +22,14 @@
   line-height: 3.5rem;
   letter-spacing: -0.357143px;
 
-  @include mq(laptop) {
+  @include mq(tablet) {
+    font-size: 4rem;
     line-height: 5.5rem;
-    font-size: 3.5rem;
   }
 
-  @include mq(desktop) {
-    line-height: 6.5rem;
+  @include mq(laptop) {
     font-size: 4.5rem;
+    line-height: 6.5rem;
   }
 }
 
