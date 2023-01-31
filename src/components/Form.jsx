@@ -44,7 +44,7 @@ const Form = () => {
             type="text"
             name="name"
             className="form-content-field-input"
-            placeholder="Alexandre Saint-Prix"
+            placeholder="Prénom Nom"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}

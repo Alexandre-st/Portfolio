@@ -1,11 +1,22 @@
 @use "../base/mixins" as *;
 
 .contact-form {
-  margin-top: 4rem;
+  margin: 8rem 0 16rem;
+
+  @include mq(laptop) {
+    margin: 8rem 0 32rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .form-content {
   margin-top: 3.2rem;
+
+  @include mq(laptop) {
+    margin-top: 1.2rem;
+    width: 63.5rem;
+  }
 
   &-field {
     display: flex;
@@ -56,7 +67,7 @@ textarea {
 input,
 textarea {
   &:focus-visible {
-    border: 1px solid #5fb4a2;
+    border: 1px solid #3366ff;
   }
 
   // Avoid the yellow autofill from the input form
