@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import github from "../assets/github-mark.svg";
-import linkedIn from "../assets/iconmonstr-linkedin-3.svg";
-import twitter from "../assets/twitter.svg";
+import github from "../assets/icons/github-mark.svg";
+import linkedIn from "../assets/icons/iconmonstr-linkedin-3.svg";
+import twitter from "../assets/icons/twitter.svg";
 import Form from "../components/Form";
 
 const Contact = () => {
