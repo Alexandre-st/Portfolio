@@ -60,10 +60,10 @@
 }
 
 @mixin section-margin {
-  margin-top: 8rem;
+  margin-top: 10rem;
 
   @include mq(laptop) {
-    margin-top: 10rem;
+    margin-top: 16rem;
   }
 }
 
