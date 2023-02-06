@@ -3,6 +3,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 3.2rem 0 4rem 0;
 
   @include mq(tablet) {
@@ -11,6 +12,11 @@
 
   @include mq(laptop) {
     padding: 6.4rem 0 5.4rem 0;
+  }
+
+  &-img {
+    height: 4rem;
+    width: 4rem;
   }
 
   &-nav {
@@ -31,3 +37,5 @@
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
+
+// logo minimalist writing "AS" with white background, digital style

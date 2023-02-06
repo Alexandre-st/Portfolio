@@ -4,11 +4,13 @@ import Header from "./layouts/Header";
 import Contact from "./pages/Contact";
 import Homepage from "./pages/Homepage";
 import Portfolio from "./pages/Portfolio";
+import { ScrollToTop } from "./ScrollToTop";
 
 const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path='/' element={<Homepage />} />
