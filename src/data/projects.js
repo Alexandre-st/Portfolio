@@ -1,8 +1,8 @@
-import archStudio from "../assets/images/projects/ArchStudio.png";
-import designo from "../assets/images/projects/designo-app-design.png";
-import github from "../assets/images/projects/github-user.png";
-import todoList from "../assets/images/projects/Todo.png";
-import typemaster from "../assets/images/projects/typemaster.png";
+import archStudio from "../assets/images/projects/archStudio.jpg";
+import designo from "../assets/images/projects/designo.jpg";
+import github from "../assets/images/projects/github_user.png";
+import todoList from "../assets/images/projects/todoList.png";
+import typemaster from "../assets/images/projects/typemaster.jpg";
 
 export const projects = [
   {
@@ -11,8 +11,7 @@ export const projects = [
     image: archStudio,
     color: "#eeeff4",
     title: "Arch Studio",
-    infos:
-      "Ce projet m'a permis de construire un site web multi-page en faisant en sorte qu'il corresponde au design fourni. J'ai utilisé React, Sass et mise en place des différentes cartes avec LeafletJS.",
+    infos:  "Ce projet m'a permis de construire un site web multi-page en faisant en sorte qu'il corresponde au design fourni. J'ai utilisé React, Sass et mise en place des différentes cartes avec LeafletJS.",
     type: "Développement Front-End",
     technos: ["REACT", "REACT-ROUTER", "SASS", "FORMIK"],
     link: "https://alexandre-st-arch-studio.netlify.app",
@@ -46,8 +45,7 @@ export const projects = [
     image: typemaster,
     color: "#f16718",
     title: "Typemaster",
-    infos:
-      "Une simple page en HTML et Scss avec un fort accent sur CSS Flexbox",
+    infos: "Une simple page en HTML et Scss avec un fort accent sur CSS Flexbox",
     type: "Développement Front-End",
     technos: ["HTML", "SASS", "PARCEL"],
     link: "https://alexandre-st-typemaster.netlify.app/",
@@ -64,8 +62,7 @@ export const projects = [
     image: github,
     color: "#1e2b48",
     title: "DevFinder",
-    infos:
-      "Une simple application React qui récupère des données de Github pour permettre aux utilisateurs de rechercher les informations du profil Github souhaité.",
+    infos: "Une simple application React qui récupère des données de Github pour permettre aux utilisateurs de rechercher les informations du profil Github souhaité.",
     type: "Développement Front-End",
     technos: ["REACT", "SASS", "API", "PROP-TYPES"],
     link: "https://alexandre-st-devfinder.netlify.app",
