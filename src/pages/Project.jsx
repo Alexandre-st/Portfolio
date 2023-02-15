@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 
-const Projec = () => {
+const Project = () => {
 
   const { work } = useParams();
 
@@ -19,4 +19,4 @@ const Projec = () => {
   );
 }
  
-export default Projec;
+export default Project;
