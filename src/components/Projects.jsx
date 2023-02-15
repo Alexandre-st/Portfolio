@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
 const Projects = () => {
@@ -18,6 +19,7 @@ const Projects = () => {
                 {project.title}
               </h2>
               <p className="text">{project.infos}</p>
+              <Link className="button button-project" to={`/portfolio/${project.linkName}`}>VIEW PROJECT</Link>
             </div>
           </div>
         );
