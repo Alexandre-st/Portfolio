@@ -5,17 +5,19 @@ import NotFound from "./NotFound";
 const Project = () => {
   const { work } = useParams();
   const data = projects;
+  // console.log(work);
+  const isAProject = data.filter((project) => project.linkName === work);
+  // console.log(isAProject);
 
   return (
     <main className="container">
-      {data.filter((project) => project.linkName === work).map((project) => (
-        <section key={project.id}>
-          <h1>{project.title}</h1>
-        </section>
-        ))
-      }
+      {isAProject.length === 0 ? (
+        <NotFound />
+      ) : (
+         <h1>{isAProject[0].title}</h1>
+      )}
     </main>
   );
 };
- 
+
 export default Project;
