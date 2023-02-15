@@ -3,6 +3,7 @@ import Footer from "./layouts/Footer";
 import Header from "./layouts/Header";
 import Contact from "./pages/Contact";
 import Homepage from "./pages/Homepage";
+import NotFound from "./pages/NotFound";
 import Portfolio from "./pages/Portfolio";
 import Project from "./pages/Project";
 import { ScrollToTop } from "./ScrollToTop";
@@ -16,8 +17,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route exact path="/portfolio/:work" element={<Project />} />
+        <Route path="/portfolio/:work" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
