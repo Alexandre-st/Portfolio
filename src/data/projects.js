@@ -1,6 +1,7 @@
 import archStudio from "../assets/images/projects/archStudio.jpg";
 import designo from "../assets/images/projects/designo.jpg";
 import github from "../assets/images/projects/github_user.png";
+import netflims from "../assets/images/projects/netflims.jpg";
 import todoList from "../assets/images/projects/todoList.png";
 import typemaster from "../assets/images/projects/typemaster.jpg";
 
@@ -11,7 +12,7 @@ export const projects = [
     image: archStudio,
     color: "#eeeff4",
     title: "Arch Studio",
-    infos:  "Ce projet m'a permis de construire un site web multi-page en faisant en sorte qu'il corresponde au design fourni. J'ai utilisé React, Sass et mise en place des différentes cartes avec LeafletJS.",
+    infos: "Ce projet m'a permis de construire un site web multi-page en faisant en sorte qu'il corresponde au design fourni. J'ai utilisé React, Sass et mise en place différentes cartes avec LeafletJS qui correspondent aux emplacements des entreprises.",
     type: "Développement Front-End",
     technos: ["REACT", "REACT-ROUTER", "SASS", "FORMIK"],
     link: "https://alexandre-st-arch-studio.netlify.app",
@@ -25,6 +26,23 @@ export const projects = [
   {
     id: "1",
     styleName: "projects-container projects-container-reverse",
+    image: netflims,
+    color: "#161d2f",
+    title: "NetFlims",
+    infos: "'Clône de Netflix'",
+    type: "Développement Front-End",
+    technos: ["REACT", "REACT-ROUTER", "SASS", "FORMIK"],
+    link: "https://alexandre-st-arch-studio.netlify.app",
+    github: "https://github.com/Alexandre-st/Arch-studio-multipage-website",
+    desc: "Ce projet était un challenge front-end de la plateforme <b>Frontend Mentor</b>. Ce site vitrine est à destination d'un studio d'architecture.",
+    preview1: "",
+    preview2: "",
+    prevProject: "",
+    nextProject: "devfinder",
+  },
+  {
+    id: "2",
+    styleName: "projects-container",
     image: designo,
     color: "#E7816B",
     title: "Designo",
@@ -40,12 +58,13 @@ export const projects = [
     nextProject: "typemaster",
   },
   {
-    id: "2",
-    styleName: "projects-container",
+    id: "3",
+    styleName: "projects-container projects-container-reverse",
     image: typemaster,
     color: "#f16718",
     title: "Typemaster",
-    infos: "Une simple page en HTML et Scss avec un fort accent sur CSS Flexbox",
+    infos:
+      "Une simple page en HTML et Scss avec un fort accent sur CSS Flexbox",
     type: "Développement Front-End",
     technos: ["HTML", "SASS", "PARCEL"],
     link: "https://alexandre-st-typemaster.netlify.app/",
@@ -57,12 +76,13 @@ export const projects = [
     nextProject: "devFinder",
   },
   {
-    id: "3",
-    styleName: "projects-container projects-container-reverse",
+    id: "4",
+    styleName: "projects-container",
     image: github,
     color: "#1e2b48",
     title: "DevFinder",
-    infos: "Une simple application React qui récupère des données de Github pour permettre aux utilisateurs de rechercher les informations du profil Github souhaité.",
+    infos:
+      "Une simple application React qui récupère des données de Github pour permettre aux utilisateurs de rechercher les informations du profil Github souhaité.",
     type: "Développement Front-End",
     technos: ["REACT", "SASS", "API", "PROP-TYPES"],
     link: "https://alexandre-st-devfinder.netlify.app",
@@ -74,12 +94,13 @@ export const projects = [
     nextProject: "todoList",
   },
   {
-    id: "4",
-    styleName: "projects-container",
+    id: "5",
+    styleName: "projects-container projects-container-reverse",
     image: todoList,
     color: "linear-gradient(135deg, #5df, #c058f3)",
     title: "Todo List",
-    infos: "La classique TODO List avec quelques petits éléments sympa. Cette application inclus un switch theme et un système de drag & drop pour réorganiser les listes.",
+    infos:
+      "La classique TODO List avec quelques petits éléments sympa. Cette application inclus un switch theme et un système de drag & drop pour réorganiser les listes.",
     type: "Développement Front-End",
     technos: ["HTML", "SCSS", "JAVASCRIPT"],
     link: "https://alexandre-st-todoapp.netlify.app",
