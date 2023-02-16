@@ -76,7 +76,7 @@ export const projects = [
     preview1: "",
     preview2: "",
     prevProject: "designo",
-    nextProject: "devFinder",
+    nextProject: "devfinder",
   },
   {
     id: "4",
@@ -111,7 +111,7 @@ export const projects = [
     desc: "Ce projet était un challenge front-end de la plateforme <b>Frontend Mentor</b>. La classique TODO List avec quelques petits éléments sympa. Cette application inclus un switch theme et un système de drag & drop pour réorganiser les listes.",
     preview1: "",
     preview2: "",
-    prevProject: "devFinder",
+    prevProject: "devfinder",
     nextProject: "",
   },
   // {
