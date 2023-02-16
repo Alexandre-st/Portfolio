@@ -34,16 +34,7 @@
   }
 
   &-background {
-    max-height: 28.8rem;
     overflow: hidden;
-
-    @include mq(tablet) {
-      max-height: 31.4rem;
-    }
-
-    @include mq(laptop) {
-      max-height: 50rem;
-    }
 
     img {
       width: 79.8%;
@@ -63,7 +54,7 @@
 
   &-content {
     @include mq(tablet) {
-      flex: 110;
+      flex: 1 1 0;
     }
 
     &-title {

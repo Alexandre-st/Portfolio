@@ -106,14 +106,13 @@
     overflow: hidden;
     resize: horizontal;
 
+    @include mq(laptop) {
+      gap: 3rem;
+    }
+
     &-element {
-      height: 28rem;
       flex: 1 0 20rem;
       overflow: hidden;
-
-      @include mq(laptop) {
-        height: 30rem;
-      }
 
       img {
         position: relative;
