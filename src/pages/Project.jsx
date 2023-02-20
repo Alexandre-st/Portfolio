@@ -13,15 +13,17 @@ const Project = () => {
         <NotFound />
       ) : (
         <>
-          <img src={isAProject[0].image} alt={isAProject[0].title} />
+          <div className="project-hero">
+            <img src={isAProject[0].image} alt={isAProject[0].title} />
+          </div>
 
           <section className="details">
             <aside className="details-aside">
               <div className="border" />
               <div className="details-aside-content">
                 <div className="details-aside-aside">
-                  <h1>{isAProject[0].title}</h1>
-                  <p className="details-aside-normal-text small-text">
+                  <h1 className="middle-title">{isAProject[0].title}</h1>
+                  <p className="details-aside-normal-text text">
                     {isAProject[0].infos}
                   </p>
                   <div className="details-aside-text">
@@ -35,7 +37,7 @@ const Project = () => {
                   </div>
                 </div>
                 <div className="details-aside-content-tablet">
-                  <p className="small-text">{isAProject[0].infos}</p>
+                  <p className="text">{isAProject[0].infos}</p>
                 </div>
               </div>
               <div className="border" />
@@ -43,7 +45,7 @@ const Project = () => {
 
             <div className="details-content">
               <h2 className="little-title">Project Background</h2>
-              <p className="small-text">{isAProject[0].desc}</p>
+              <p className="text">{isAProject[0].desc}</p>
               <h3 className="little-title">Static Previews</h3>
 
              <img src={isAProject[0].image} alt="" />              
