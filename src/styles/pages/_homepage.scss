@@ -104,7 +104,7 @@
     flex-wrap: wrap;
     gap: 4rem;
     overflow: hidden;
-    resize: horizontal;
+    // height: 100%;
 
     @include mq(laptop) {
       gap: 3rem;
@@ -113,6 +113,8 @@
     &-element {
       flex: 1 0 20rem;
       overflow: hidden;
+      max-height: 29.7rem;
+      height: 100%;
 
       img {
         position: relative;

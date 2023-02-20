@@ -1,9 +1,19 @@
 @use "../base/mixins" as *;
 
+.project-hero {
+  @include mq(laptop) {
+    max-height: 60rem;
+    overflow: hidden;
+  }
+}
+
 .details {
+  margin-top: 4rem;
+
   @include mq(laptop) {
     display: flex;
     gap: 12.5rem;
+    margin-top: 11.5rem;
   }
 
   &-aside {
