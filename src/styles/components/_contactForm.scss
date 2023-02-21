@@ -34,7 +34,7 @@
       opacity: 0.8;
     }
 
-    &-input {
+    input {
       @include text-form;
       padding-left: 1.6rem;
       height: 4.8rem;
@@ -45,7 +45,7 @@
   // To color the input border
   &-error {
     color: #f43030;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.2rem;
     font-weight: 700;
     font-style: italic;
@@ -59,9 +59,10 @@
 }
 
 textarea {
-  min-height: 9.6rem;
+  @include text-form;
+  padding: 1rem 1.6rem 1rem 1.6rem;
+  min-height: 14rem;
   resize: none;
-  padding-top: 1rem;
 }
 
 input,
@@ -74,8 +75,8 @@ textarea {
   &:-webkit-autofill {
     box-shadow: 0 0 0px 1000px #ebebec inset;
   }
+}
 
-  &:invalid {
-    border: 1px solid #f43030;
-  }
+.invalid {
+  border: 1px solid #f43030;
 }

@@ -1,0 +1,35 @@
+@use "../base/mixins" as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0 3rem;
+  z-index: 2;
+
+  &-container {
+    position: relative;
+    padding: 4rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+    opacity: 0.9;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 50rem;
+    background-color: #ffffff;
+  }
+
+  &-button {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
+}
