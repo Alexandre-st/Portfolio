@@ -31,8 +31,8 @@ const Homepage = () => {
           <p className="skills-text-text text">
             Du premier jour de ma formation de développeur web à maintenant,
             j'ai appris et gagné une expérience solide des standards du
-            dévéloppement web. L'importance de la réutilisabilité et l'évotulité
-            du code et comment l'expérience utilisatieur est primordial.
+            développement web. L'importance de la réutilisabilité et l'évotulité
+            du code et à quel point l'expérience utilisatieur est primordial.
           </p>
         </div>
         <div className="skills-content">
