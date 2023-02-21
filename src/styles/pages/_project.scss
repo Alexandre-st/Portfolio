@@ -17,6 +17,11 @@
   }
 
   &-aside {
+    @include mq(laptop) {
+      width: 100%;
+      max-width: 31.47rem;
+    }
+
     &-content {
       @include mq(tablet) {
         display: flex;
@@ -55,18 +60,6 @@
       margin: 2.4rem 0;
     }
 
-    button {
-      margin: 2.4rem 0;
-
-      @include mq(tablet) {
-        margin: 1.6rem 0 3.2rem 0;
-      }
-
-      @include mq(laptop) {
-        margin: 3.2rem 0 4rem 0;
-      }
-    }
-
     &-normal-text {
       @include mq(tablet) {
         display: none;
@@ -74,6 +67,16 @@
 
       @include mq(laptop) {
         display: block;
+      }
+    }
+
+    &-link {
+      display: flex;
+      justify-content: space-between;
+      margin: 3rem 0 6rem 0;
+
+      &-a {
+        @include link-button;
       }
     }
   }
@@ -89,14 +92,30 @@
       margin: 0 0 6.4rem 0;
     }
 
+    &-preview {
+      margin: 4rem 0 3.2rem;
+
+      @include mq(laptop) {
+        margin: 4rem 0 3.2rem;
+      }
+    }
+
     p {
       margin: 2.8rem 0 4rem 0;
 
       @include mq(laptop) {
-        margin: 2.8rem 0 3.2rem 0;
+        margin: 2.8rem 0 5.2rem 0;
       }
     }
   }
+}
+
+// Color for the technos
+.text-infos {
+  color: #002e70;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 3rem;
 }
 
 // For the link for next or previous project

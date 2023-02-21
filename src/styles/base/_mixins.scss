@@ -70,6 +70,21 @@
   }
 }
 
+@mixin link-button {
+  border: 1px solid #33323d;
+  padding: 12px 0 12px 0;
+  height: 3.8rem;
+  text-align: center;
+  color: #33323d;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #33323d;
+    transition: all 0.4s ease-in-out;
+    color: #ffffff;
+  }
+}
+
 @mixin section-margin {
   margin-top: 10rem;
 

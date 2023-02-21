@@ -31,8 +31,8 @@ const Homepage = () => {
           <p className="skills-text-text text">
             Du premier jour de ma formation de développeur web à maintenant,
             j'ai appris et gagné une expérience solide des standards du
-            dévéloppement web. L'importance de la réutilisabilité et l'évotulité
-            du code et comment l'expérience utilisatieur est primordial.
+            développement web. L'importance de la réutilisabilité et l'évotulité
+            du code et à quel point l'expérience utilisatieur est primordial.
           </p>
         </div>
         <div className="skills-content">
@@ -59,32 +59,28 @@ const Homepage = () => {
             <li className="skills-content-list-li">User Stories</li>
             <li className="skills-content-list-li">Gestion de Projet</li>
             <li className="skills-content-list-li">Figma</li>
-
             <li className="skills-content-list-li">Opquast</li>
           </ul>
         </div>
       </section>
       <section className="work">
         <h3 className="work-title big-title">Mes Projets</h3>
-            <div className="work-content">
-              {projects.filter(project => project.id < 3).map(element => {
-                return (
-                  <div
-                    className="work-content-element"
-                    style={{ background: element.color }}
-                    key={element.id}
-                  >
-                    <img loading="lazy" src={element.image} alt={element.name} />
-                  </div>
-                );
-              })}
-            </div>
-             <Link
-        className="button button-white work-button"
-        to="/portfolio"
-      >
-        Un peu plus ...
-      </Link>
+        <div className="work-content">
+          {projects.filter(project => project.id < 3).map(element => {
+            return (
+              <div
+                className="work-content-element"
+                style={{ background: element.color }}
+                key={element.id}
+              >
+                <img src={element.image} alt={element.name} />
+              </div>
+            );
+          })}
+        </div>
+        <Link className="button button-white button-work" to="/portfolio">
+          Un peu plus ...
+        </Link>
       </section>
     </main>
   );

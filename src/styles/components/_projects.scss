@@ -57,6 +57,22 @@
       flex: 1 1 0;
     }
 
+    &-text {
+      margin: 2.5rem 0 2.4rem 0;
+
+      @include mq(tablet) {
+        margin: 3.2rem 0 5rem 0;
+      }
+
+      p {
+        margin: 2.4rem 0;
+
+        @include mq(tablet) {
+          margin: 2.9rem 0 3.5rem;
+        }
+      }
+    }
+
     &-title {
       margin-top: 3rem;
     }
