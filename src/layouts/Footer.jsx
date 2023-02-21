@@ -20,15 +20,24 @@ const Footer = () => {
         </ul>
 
         <div className="footer-social">
-          <a href="https://github.com/Alexandre-st" target="_blank">
+          <a
+            href="https://github.com/Alexandre-st"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={github} alt="Lien pour accéder à mon Github" />
           </a>
-          <a href="https://twitter.com/a_saintprix" target="_blank">
+          <a
+            href="https://twitter.com/a_saintprix"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={twitter} alt="Lien pour accéder à mon Twitter" />
           </a>
           <a
             href="https://www.linkedin.com/in/alexandre-saint-prix/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={linkedIn} alt="Lien pour accéder à mon LinkedIn" />
           </a>
@@ -37,5 +46,5 @@ const Footer = () => {
     </footer>
   );
 };
- 
+
 export default Footer;
