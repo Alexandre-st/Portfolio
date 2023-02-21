@@ -1,9 +1,13 @@
+import { useState } from "react";
 import github from "../assets/icons/github-mark.svg";
 import linkedIn from "../assets/icons/iconmonstr-linkedin-3.svg";
 import twitter from "../assets/icons/twitter.svg";
 import Form from "../components/Form";
+import { Modal } from "../components/Modal.jsx";
 
 const Contact = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <main className="container">
       <section className="contact-hero">
@@ -35,7 +39,7 @@ const Contact = () => {
             >
               <img src={twitter} alt="Lien pour accéder à mon Twitter" />
             </a>
-            <a 
+            <a
               href="https://www.linkedin.com/in/alexandre-saint-prix"
               target="_blank"
               rel="noopener noreferrer"
@@ -45,7 +49,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <Form />
+      <Form setShowModal={setShowModal} />
+      {showModal ? <Modal setShowModal={setShowModal} /> : null}
     </main>
   );
 };

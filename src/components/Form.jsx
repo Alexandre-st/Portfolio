@@ -1,8 +1,7 @@
 import * as emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
 
-const Form = () => {
-
+const Form = ({ setShowModal }) => {
   const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
   const formik = useFormik({
@@ -39,9 +38,14 @@ const Form = () => {
       }, (error) => {
         // console.log(error.text);
       });
+      openModal();
       formik.resetForm({ values: '' });
     }
   });
+
+  const openModal = () => {
+    setShowModal(true);
+  };
 
   return (
     <section className="contact-form">
