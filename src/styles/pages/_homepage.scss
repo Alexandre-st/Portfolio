@@ -104,7 +104,6 @@
     flex-wrap: wrap;
     gap: 4rem;
     overflow: hidden;
-    // height: 100%;
 
     @include mq(laptop) {
       gap: 3rem;
@@ -123,10 +122,5 @@
         margin: auto;
       }
     }
-  }
-
-  &-button {
-    margin-left: auto;
-    margin-top: 4rem;
   }
 }

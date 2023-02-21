@@ -50,6 +50,15 @@
     width: 20.2rem;
   }
 
+  &-link {
+    width: 12rem;
+  }
+
+  &-work {
+    margin-left: auto;
+    margin-top: 4rem;
+  }
+
   &-form {
     &:disabled {
       background-color: #ffffff;

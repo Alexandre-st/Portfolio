@@ -59,32 +59,28 @@ const Homepage = () => {
             <li className="skills-content-list-li">User Stories</li>
             <li className="skills-content-list-li">Gestion de Projet</li>
             <li className="skills-content-list-li">Figma</li>
-
             <li className="skills-content-list-li">Opquast</li>
           </ul>
         </div>
       </section>
       <section className="work">
         <h3 className="work-title big-title">Mes Projets</h3>
-            <div className="work-content">
-              {projects.filter(project => project.id < 3).map(element => {
-                return (
-                  <div
-                    className="work-content-element"
-                    style={{ background: element.color }}
-                    key={element.id}
-                  >
-                    <img loading="lazy" src={element.image} alt={element.name} />
-                  </div>
-                );
-              })}
-            </div>
-             <Link
-        className="button button-white work-button"
-        to="/portfolio"
-      >
-        Un peu plus ...
-      </Link>
+        <div className="work-content">
+          {projects.filter(project => project.id < 3).map(element => {
+            return (
+              <div
+                className="work-content-element"
+                style={{ background: element.color }}
+                key={element.id}
+              >
+                <img src={element.image} alt={element.name} />
+              </div>
+            );
+          })}
+        </div>
+        <Link className="button button-white button-work" to="/portfolio">
+          Un peu plus ...
+        </Link>
       </section>
     </main>
   );
