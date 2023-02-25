@@ -2,6 +2,12 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '/logo.jpg';
 
 const Header = () => {
+
+   const activeStyle = {
+     fontWeight: "900",
+     color: "#000000",
+   };
+   
   return (
     <header className='container'>
       <div className='header'>
@@ -11,9 +17,15 @@ const Header = () => {
 
         <nav className="header-nav">
           <ul className="header-nav-list">
-            <li className='nav-link'><NavLink to='/'>HOME</NavLink></li>
-            <li className='nav-link'><NavLink to='/portfolio'>PORTFOLIO</NavLink></li>
-            <li className='nav-link'><NavLink to='/contact'>CONTACT ME</NavLink></li>
+            <li className='nav-link'>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined } to='/'>HOME</NavLink>
+            </li>
+            <li className='nav-link'>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined } to='/portfolio'>PORTFOLIO</NavLink>
+            </li>
+            <li className='nav-link'>
+              <NavLink style={({ isActive }) => isActive ? activeStyle : undefined } to='/contact'>CONTACT</NavLink>
+            </li>
           </ul>
         </nav>
       </div>

@@ -15,7 +15,7 @@ const Homepage = () => {
             <span className="hero-text-title-span">Développeur Front-End</span>
           </h1>
           <p className="hero-text-text text">
-            Je suis un développeur front-end junior à la recherche d’une
+            Je suis un développeur front-end à la recherche d’une
             entreprise passionnante. Je me concentre sur l’écriture accessible
             d’un code HTML, l’utilisation de pratiques modernes du CSS et
             l’écriture de code JavaScript propre. En écrivant du code
@@ -68,11 +68,7 @@ const Homepage = () => {
         <div className="work-content">
           {projects.filter(project => project.id < 3).map(element => {
             return (
-              <div
-                className="work-content-element"
-                style={{ background: element.color }}
-                key={element.id}
-              >
+              <div className="work-content-element" style={{ background: element.color }} key={element.id}>
                 <img src={element.image} alt={element.name} />
               </div>
             );
