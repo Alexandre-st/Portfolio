@@ -11,11 +11,6 @@
   font: inherit;
 }
 
-/** Can determinate what type of color schema is determinate on your device */
-// html {
-//   color-scheme: dark light;
-// }
-
 body {
   min-height: 100vh;
 }
@@ -37,11 +32,13 @@ button {
   background: none;
   color: inherit;
 }
+
 input:focus,
 textarea:focus,
 button:focus {
   outline: none;
 }
+
 input[type="submit"]:hover,
 button:hover {
   cursor: pointer;

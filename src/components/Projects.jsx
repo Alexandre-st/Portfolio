@@ -16,7 +16,7 @@ const Projects = () => {
                 <h2 className="projects-content-title big-title">{project.title}</h2>
                 <p className="text">{project.infos}</p>
                 <Link className="button button-white" to={`/portfolio/${project.linkName}`}>
-                  VIEW PROJECT
+                  VOIR LE PROJET
                 </Link>
               </div>
               <div className="border" />

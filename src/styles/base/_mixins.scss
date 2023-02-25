@@ -56,7 +56,7 @@
 }
 
 @mixin button {
-  border: 1px solid #33323d;
+  border: 1px solid #262626;
   padding: 17px 0 17px 0;
   height: 4.8rem;
   text-align: center;
@@ -64,14 +64,14 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: #33323d;
+    background-color: #262626;
     transition: all 0.4s ease-in-out;
     color: #ffffff;
   }
 }
 
 @mixin link-button {
-  border: 1px solid #33323d;
+  border: 1px solid #262626;
   padding: 12px 0 12px 0;
   height: 3.8rem;
   text-align: center;
@@ -79,7 +79,7 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: #33323d;
+    background-color: #262626;
     transition: all 0.4s ease-in-out;
     color: #ffffff;
   }

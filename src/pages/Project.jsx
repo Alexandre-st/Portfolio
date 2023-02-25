@@ -43,10 +43,9 @@ const Project = () => {
             </aside>
 
             <div className="details-content">
-              <h2 className="little-title">Project Background</h2>
+              <h2 className="little-title">Description du projet</h2>
               <p className="text">{isAProject[0].desc}</p>
-              <h3 className="little-title">Static Previews</h3>
-
+              <h3 className="little-title">Image statique</h3>
               <img className="details-content-preview" src={isAProject[0].image} alt={isAProject[0].title} />
             </div>
           </section>
