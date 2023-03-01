@@ -17,6 +17,9 @@ const Footer = () => {
           <li className="nav-link">
             <Link to="/contact">Contact</Link>
           </li>
+          <li className="nav-link">
+            <Link to="/mentions-legales">Mentions Légales</Link>
+          </li>
         </ul>
 
         <div className="footer-social">
