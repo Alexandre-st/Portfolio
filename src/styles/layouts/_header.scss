@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 3.2rem 0 4rem 0;
+  position: relative;
 
   @include mq(tablet) {
     padding: 6.4rem 0 4.7rem 0;
@@ -14,9 +15,23 @@
     padding: 6.4rem 0 5.4rem 0;
   }
 
+  // When the menu is open this class going to be active
+  &-open {
+    position: fixed;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.2rem 2rem 4rem 2rem;
+    z-index: 12;
+  }
+
   &-img {
     width: 5rem;
     height: 5rem;
+    position: relative;
+    z-index: 6;
   }
 
   &-nav {
