@@ -1,0 +1,33 @@
+@use "../base/mixins" as *;
+
+.header-menu {
+  @include mq(tablet) {
+    display: none;
+  }
+
+  &-logo {
+    position: relative;
+    z-index: 6;
+  }
+
+  &-background {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+  }
+
+  &-container {
+    position: relative;
+    top: 20rem;
+  }
+
+  &-list {
+    font-size: 12vw;
+    line-height: 12rem;
+    color: #262626;
+  }
+}
