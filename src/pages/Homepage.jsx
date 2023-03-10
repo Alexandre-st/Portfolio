@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Me from "../assets/images/Profil_Picture.jpg";
-import { projects } from "../data/projects";
+import { projects, skills } from "../data/data";
 
 const Homepage = () => {
   return (
@@ -39,29 +39,11 @@ const Homepage = () => {
         </div>
         <div className="skills-content">
           <ul className="skills-content-list">
-            <li className="skills-content-list-li">Javascript</li>
-            <li className="skills-content-list-li">React</li>
-            <li className="skills-content-list-li">Git</li>
-            <li className="skills-content-list-li">Git Flow</li>
-            <li className="skills-content-list-li">HTML</li>
-            <li className="skills-content-list-li">css</li>
-            <li className="skills-content-list-li">scss</li>
-            <li className="skills-content-list-li">sass</li>
-            <li className="skills-content-list-li">CSS Modules</li>
-            <li className="skills-content-list-li">Styled-Components</li>
-            <li className="skills-content-list-li">Redux</li>
-            <li className="skills-content-list-li">Node</li>
-            <li className="skills-content-list-li">Express</li>
-            <li className="skills-content-list-li">SQL</li>
-            <li className="skills-content-list-li">MySQL</li>
-            <li className="skills-content-list-li">PostgreSQL</li>
-            <li className="skills-content-list-li">MongoDB</li>
-            <li className="skills-content-list-li">User Experience</li>
-            <li className="skills-content-list-li">Use Case</li>
-            <li className="skills-content-list-li">User Stories</li>
-            <li className="skills-content-list-li">Gestion de Projet</li>
-            <li className="skills-content-list-li">Figma</li>
-            <li className="skills-content-list-li">Opquast</li>
+            {skills.map((skill) => (
+              <li className="skills-content-list-li" key={skill.title}>
+                {skill.title}
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -72,7 +54,11 @@ const Homepage = () => {
             .filter((project) => project.id < 3)
             .map((element) => {
               return (
-                <div className="work-content-element" style={{ background: element.color }} key={element.id}>
+                <div
+                  className="work-content-element"
+                  style={{ background: element.color }}
+                  key={element.id}
+                >
                   <img src={element.image} alt={element.name} />
                 </div>
               );
