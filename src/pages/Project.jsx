@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import ArrowLeft from '../assets/icons/Path-left.svg';
 import ArrowRight from '../assets/icons/Path-right.svg';
-import { projects } from "../data/projects";
+import { projects } from "../data/data";
 import NotFound from "./NotFound";
 
 const Project = () => {
