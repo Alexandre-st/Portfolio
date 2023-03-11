@@ -14,7 +14,12 @@ const Header = () => {
   return (
     <header className="container">
       <div className={toggleMenu ? "header-open" : "header"}>
-        <Link to="/" aria-label="Back to the menu" className="header-img">
+        <Link 
+          to="/"
+          onClick={() => setToggleMenu(false)}
+          aria-label="Back to the menu"
+          className="header-img"
+        >
           <img src={logo} alt="AS comme Alexandre Saint-Prix" />
         </Link>
 
