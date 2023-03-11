@@ -8,6 +8,7 @@
   &-logo {
     position: relative;
     z-index: 6;
+    height: 2.4rem;
   }
 
   &-background {
@@ -22,12 +23,12 @@
 
   &-container {
     position: relative;
-    top: 20rem;
+    top: 16rem;
   }
 
   &-list {
-    font-size: 12vw;
-    line-height: 12rem;
+    font-size: 11vw;
+    line-height: 11rem;
     color: #262626;
   }
 }
