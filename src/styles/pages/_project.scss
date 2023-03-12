@@ -23,25 +23,7 @@
     }
 
     &-content {
-      @include mq(tablet) {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      &-tablet {
-        display: none;
-
-        @include mq(tablet) {
-          display: block;
-          flex: 1;
-          margin-top: 3.2rem;
-          max-width: 35rem;
-        }
-
-        @include mq(laptop) {
-          display: none;
-        }
-      }
+      max-width: 35.5rem;
     }
 
     h1 {

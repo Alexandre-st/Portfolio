@@ -15,11 +15,11 @@ const Homepage = () => {
             <span className="hero-text-title-span">Développeur Front-End</span>
           </h1>
           <p className="hero-text-text text">
-            Je suis un développeur front-end à la recherche d’une entreprise
-            passionnante. Je me concentre sur l’écriture accessible d’un code
-            HTML, d'un code JavaScript propre et sur l’utilisation de pratiques
-            modernes du CSS. En écrivant du code JavaScript, j’utilise le plus
-            souvent React, mais je peux m’adapter à tous les outils demandés.
+            Je suis un développeur front-end qui se concentre sur l’écriture
+            accessible d’un code HTML, d'un code JavaScript propre et sur
+            l’utilisation de pratiques modernes du CSS. J’utilise le plus
+            souvent React, mais je peux m’adapter à tous les outils demandés. Je
+            suis situé à Paris et possède de l’expérience en remote.
           </p>
           <p className="text">
             Je suis situé à Paris et possède aussi de l’expérience en remote.
@@ -30,11 +30,8 @@ const Homepage = () => {
         <div className="skills-text">
           <h2 className="skills-text-title big-title">Mes compétences</h2>
           <p className="skills-text-text text">
-            Je n’ai cessé de développer une expérience solide des standards du
-            développement web depuis ma formation chez O’Clock. La
-            réutilisabilité et l’évotulité du code sont des aspects primordiaux
-            qui doivent être pris en compte, notamment dans la considération de
-            l’expérience de l’utilisateur.
+            Depuis mes débuts chez O'Clock, je n’ai cessé de développer une expérience solide des standards du développement web.
+            La réutilisabilité et l'évolutivité du code sont des aspects primordiaux qui doivent être pris en compte, notamment dans la considération de l’expérience de l’utilisateur.
           </p>
         </div>
         <div className="skills-content">
@@ -50,15 +47,9 @@ const Homepage = () => {
       <section className="work">
         <h3 className="work-title big-title">Mes Projets</h3>
         <div className="work-content">
-          {projects
-            .filter((project) => project.id < 3)
-            .map((element) => {
+          {projects.filter((project) => project.id < 3).map((element) => {
               return (
-                <div
-                  className="work-content-element"
-                  style={{ background: element.color }}
-                  key={element.id}
-                >
+                <div className="work-content-element" style={{ background: element.color }} key={element.id}>
                   <img src={element.image} alt={element.name} />
                 </div>
               );

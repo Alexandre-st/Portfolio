@@ -25,7 +25,6 @@ const Project = () => {
               <div className="details-aside-content">
                 <div className="details-aside-aside">
                   <h1 className="middle-title">{isAProject[0].title}</h1>
-                  <p className="details-aside-normal-text text">{isAProject[0].infos}</p>
                   <div className="details-aside-text">
                     <p className="text-infos">{isAProject[0].type}</p>
                     <p className="text-infos text-infos-technos">{isAProject[0].technos.join(" / ")}</p>
@@ -35,16 +34,13 @@ const Project = () => {
                     </div>
                   </div>
                 </div>
-                <div className="details-aside-content-tablet">
-                  <p className="text">{isAProject[0].infos}</p>
-                </div>
               </div>
               <div className="border" />
             </aside>
 
             <div className="details-content">
               <h2 className="little-title">Description du projet</h2>
-              <p className="text">{isAProject[0].desc}</p>
+              <p className="text">{isAProject[0].infos}</p>
               <h3 className="little-title">Image statique</h3>
               <img className="details-content-preview" src={isAProject[0].image} alt={isAProject[0].title} />
             </div>

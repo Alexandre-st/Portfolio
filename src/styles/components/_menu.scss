@@ -66,6 +66,23 @@
         height: 2.5rem;
       }
 
+      :hover {
+        &:nth-child(1) {
+          filter: invert(0%) sepia(100%) saturate(750%) hue-rotate(100deg)
+            brightness(0%) contrast(111%);
+        }
+
+        &:nth-child(2) {
+          filter: invert(54%) sepia(94%) saturate(2260%) hue-rotate(175deg)
+            brightness(96%) contrast(97%);
+        }
+
+        &:nth-child(3) {
+          filter: invert(23%) sepia(56%) saturate(2970%) hue-rotate(197deg)
+            brightness(104%) contrast(92%);
+        }
+      }
+
       :not(:first-child) {
         img {
           filter: invert(95%) sepia(5%) saturate(857%) hue-rotate(183deg)
