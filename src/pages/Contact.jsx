@@ -11,9 +11,12 @@ const Contact = () => {
   return (
     <main className="container">
       <section className="contact-hero">
-        <h1 className="contact-hero-title big-title">Premier contact</h1>
+        <h1 className="contact-hero-title big-title">Contact</h1>
         <div className="contact-hero-content">
-          <p className="contact-hero-about text">
+        <a className="hero-content-mail" href="mailto:alexandre.saintprix@gmail.com">
+          alexandre.saintprix@gmail.com
+        </a>
+          {/* <p className="contact-hero-about text">
             J'aimerai beaucoup savoir sur quoi vous travaillez actuellement et
             comment je pourrai vous aider. Je suis actuellement à la recherche
             d'un nouveau poste et je suis ouvert à une multitude d'opportunité.
@@ -23,7 +26,7 @@ const Contact = () => {
             personne positive qui approchera chaque tâches avec un sens du
             détail et une attention particulière pour la réalisation de
             l'objectif.
-          </p>
+          </p> */}
           <div className="contact-hero-link">
             <a href="https://github.com/Alexandre-st" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="Lien pour accéder à mon Github" />
