@@ -14,29 +14,26 @@ const Form = ({ setShowModal }) => {
     validate: values => {
       const errors = {};
       if (!values.from_name) {
-        errors.from_name = "Ce champ est obligatoire.";
+        errors.from_name = "Merci de remplir ce champ.";
       }
       if (!values.from_email) {
         errors.from_email = 'Ce champ est obligatoire.'
       } else if (!regexEmail.test(values.from_email)) {
-        errors.from_email = 'Veuillez utiliser une adresse email valide';
+        errors.from_email = 'Veuillez utiliser une adresse email valide.';
       }
       if (!values.message) {
-        errors.message='Ce champ est obligatoire'
+        errors.message='Ce champ est obligatoire.'
       }
       return errors;
     },
     onSubmit: values => {
-      // console.log('Submit : ', values);
       emailjs.send(
         import.meta.env.VITE_SERVICE_ID, 
         import.meta.env.VITE_TEMPLATE_ID,
         values,
         import.meta.env.VITE_PUBLIC_KEY
       ).then((result) => {
-        // console.log(result.text, "email sent");
       }, (error) => {
-        // console.log(error.text);
       });
       openModal();
       formik.resetForm({ values: '' });
@@ -49,7 +46,6 @@ const Form = ({ setShowModal }) => {
 
   return (
     <section className="contact-form">
-      <h2 className="contact-form-title big-title">Contactez-moi</h2>
       <form className="form-content" onSubmit={formik.handleSubmit}>
         <div className="form-content-field">
           <label className="form-content-field-label" htmlFor="from_name">
