@@ -1,0 +1,21 @@
+@use "../base/mixins" as *;
+
+.contact {
+  &-hero {
+    @include mq(desktop) {
+      &-title {
+        margin-right: 0;
+      }
+    }
+
+    &-about {
+      margin-top: 4rem;
+    }
+
+    &-mail {
+      margin-top: 2rem;
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+}

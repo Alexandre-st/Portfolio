@@ -1,0 +1,18 @@
+.mentions {
+  margin: 5rem 0;
+
+  &-container {
+    margin-top: 3.5rem;
+
+    b {
+      font-weight: 700;
+    }
+
+    .link {
+      &:hover {
+        text-decoration: underline;
+        font-weight: 700;
+      }
+    }
+  }
+}

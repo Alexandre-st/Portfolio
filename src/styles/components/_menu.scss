@@ -1,0 +1,94 @@
+@use "../base/mixins" as *;
+
+.header-menu {
+  @include mq(tablet) {
+    display: none;
+  }
+
+  &-logo {
+    position: relative;
+    z-index: 6;
+    height: 2.4rem;
+  }
+
+  &-background {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 4;
+  }
+
+  &-container {
+    position: relative;
+    line-height: 11rem;
+    top: 16rem;
+  }
+
+  &-list {
+    font-size: 11vw;
+    color: #262626;
+
+    li {
+      position: relative;
+    }
+
+    &-link {
+      &.active {
+        // text-decoration: underline;
+        // text-decoration-thickness: 2px;
+        font-style: italic;
+      }
+    }
+  }
+
+  // For the social link and the "mentions-légales"
+  &-link {
+    position: absolute;
+    bottom: 4rem;
+    padding: 0 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      font-size: 1.4rem;
+      letter-spacing: 0.2rem;
+    }
+
+    &-social {
+      display: flex;
+      gap: 3rem;
+
+      img {
+        height: 2.5rem;
+      }
+
+      :hover {
+        &:nth-child(1) {
+          filter: invert(0%) sepia(100%) saturate(750%) hue-rotate(100deg)
+            brightness(0%) contrast(111%);
+        }
+
+        &:nth-child(2) {
+          filter: invert(54%) sepia(94%) saturate(2260%) hue-rotate(175deg)
+            brightness(96%) contrast(97%);
+        }
+
+        &:nth-child(3) {
+          filter: invert(23%) sepia(56%) saturate(2970%) hue-rotate(197deg)
+            brightness(104%) contrast(92%);
+        }
+      }
+
+      :not(:first-child) {
+        img {
+          filter: invert(95%) sepia(5%) saturate(857%) hue-rotate(183deg)
+            brightness(92%) contrast(91%);
+        }
+      }
+    }
+  }
+}

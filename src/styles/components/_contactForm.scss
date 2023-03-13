@@ -1,0 +1,81 @@
+@use "../base/mixins" as *;
+
+.contact-form {
+  margin: 8rem 0 16rem;
+
+  @include mq(laptop) {
+    margin: 10rem 0 26rem 0;
+  }
+}
+
+.form-content {
+  margin-top: 3.2rem;
+  max-width: 63.5rem;
+  margin: auto;
+
+  @include mq(laptop) {
+    margin-top: 4rem;
+  }
+
+  &-field {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 2.4rem;
+    }
+
+    &-label {
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 3rem;
+      color: #33323d;
+      opacity: 0.8;
+    }
+
+    input {
+      @include text-form;
+      padding-left: 1.6rem;
+      height: 4.8rem;
+      margin-top: 0.8rem;
+    }
+  }
+
+  // To color the input border
+  &-error {
+    color: #f43030;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  &-button {
+    margin-top: 3rem;
+    margin-left: auto;
+  }
+}
+
+textarea {
+  @include text-form;
+  padding: 1rem 1.6rem 1rem 1.6rem;
+  min-height: 14rem;
+  resize: none;
+}
+
+input,
+textarea {
+  &:focus-visible {
+    border: 1px solid #3366ff;
+  }
+
+  // Avoid the yellow autofill from the input form
+  &:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #ebebec inset;
+  }
+}
+
+.invalid {
+  border: 1px solid #f43030;
+}

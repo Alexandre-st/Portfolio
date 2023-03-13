@@ -1,0 +1,106 @@
+// To setup Media Queries
+@mixin mq($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == laptop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin big-title {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  letter-spacing: -0.357143px;
+
+  @include mq(tablet) {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+
+  @include mq(laptop) {
+    font-size: 4.5rem;
+    line-height: 6.5rem;
+  }
+}
+
+@mixin mid-title {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  letter-spacing: -0.357143px;
+
+  @include mq(tablet) {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+}
+
+@mixin text-form {
+  width: 100%;
+  font-size: 1.3rem;
+  background-color: #ebebec;
+
+  &::placeholder {
+    color: #33323d;
+    opacity: 0.4;
+  }
+}
+
+@mixin button {
+  border: 1px solid #262626;
+  padding: 17px 0 17px 0;
+  height: 4.8rem;
+  text-align: center;
+  color: #33323d;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #262626;
+    transition: all 0.4s ease-in-out;
+    color: #ffffff;
+  }
+}
+
+@mixin link-button {
+  border: 1px solid #262626;
+  padding: 12px 0 12px 0;
+  height: 3.8rem;
+  text-align: center;
+  color: #33323d;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: #262626;
+    transition: all 0.4s ease-in-out;
+    color: #ffffff;
+  }
+}
+
+@mixin section-margin {
+  margin-top: 10rem;
+
+  @include mq(laptop) {
+    margin-top: 16rem;
+  }
+}
+
+@mixin content-margin {
+  margin-bottom: 3.2rem;
+
+  @include mq(laptop) {
+    margin-bottom: 3.5rem;
+  }
+
+  @include mq(desktop) {
+    margin-bottom: 5.5rem;
+  }
+}

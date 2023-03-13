@@ -1,0 +1,80 @@
+@use "../base/mixins" as *;
+
+.projects {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &:not(:first-child) {
+      margin-top: 7.2rem;
+
+      @include mq(tablet) {
+        margin-top: 12rem;
+      }
+
+      @include mq(laptop) {
+        margin-top: 16rem;
+      }
+    }
+
+    @include mq(tablet) {
+      flex-direction: row;
+      align-items: center;
+      gap: 6.9rem;
+
+      &-reverse {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include mq(laptop) {
+      gap: 12.5rem;
+    }
+  }
+
+  &-background {
+    overflow: hidden;
+
+    img {
+      width: 79.8%;
+      margin: auto;
+      position: relative;
+      top: 2.88rem;
+
+      @include mq(tablet) {
+        max-width: 33.9rem;
+      }
+
+      @include mq(laptop) {
+        max-width: 54rem;
+      }
+    }
+  }
+
+  &-content {
+    @include mq(tablet) {
+      flex: 1 1 0;
+    }
+
+    &-text {
+      margin: 2.5rem 0 2.4rem 0;
+
+      @include mq(tablet) {
+        margin: 3.2rem 0 5rem 0;
+      }
+
+      p {
+        margin: 2.4rem 0;
+
+        @include mq(tablet) {
+          margin: 2.9rem 0 3.5rem;
+        }
+      }
+    }
+
+    &-title {
+      margin-top: 3rem;
+    }
+  }
+}

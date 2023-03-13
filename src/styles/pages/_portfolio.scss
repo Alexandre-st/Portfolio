@@ -1,0 +1,15 @@
+.images {
+  &-color {
+    background-color: #e7816b;
+    height: 28.8rem;
+    overflow: hidden;
+
+    img {
+      width: 79.8%;
+      margin: auto;
+      position: relative;
+      top: 2.88rem;
+      box-shadow: 13px 39px 5px 11px;
+    }
+  }
+}

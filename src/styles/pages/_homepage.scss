@@ -1,0 +1,127 @@
+// https://github-contributions.vercel.app/
+@use "../base/mixins" as *;
+
+.hero {
+  @include mq(tablet) {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  &-img {
+    img {
+      border-radius: 10px;
+    }
+  }
+
+  &-text {
+    margin-top: 6rem;
+
+    @include mq(tablet) {
+      margin-top: 0;
+      text-align: right;
+    }
+
+    &-title {
+      @include big-title;
+      @include content-margin;
+      display: flex;
+      flex-direction: column;
+
+      &-span {
+        font-weight: 600;
+      }
+    }
+
+    &-button {
+      display: none;
+    }
+  }
+}
+
+// Skills Part
+.skills {
+  @include section-margin;
+
+  @include mq(tablet) {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+  }
+
+  &-text {
+    @include mq(tablet) {
+      max-width: 39rem;
+    }
+
+    @include mq(laptop) {
+      max-width: 49.2rem;
+    }
+
+    &-title {
+      @include content-margin;
+    }
+  }
+
+  &-content {
+    margin-top: 4rem;
+
+    @include mq(laptop) {
+      margin-top: 10rem;
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 1.4rem;
+      line-height: 2rem;
+
+      &-li {
+        background-color: #f1f2f6;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 10px #ced6e0;
+          cursor: default;
+        }
+      }
+    }
+  }
+}
+
+// Projects part
+.work {
+  @include section-margin;
+
+  &-title {
+    @include content-margin;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    overflow: hidden;
+
+    @include mq(laptop) {
+      gap: 3rem;
+    }
+
+    &-element {
+      flex: 1 0 20rem;
+      overflow: hidden;
+      max-height: 29.7rem;
+      height: 100%;
+
+      img {
+        position: relative;
+        top: 2.88rem;
+        width: 79.8%;
+        margin: auto;
+      }
+    }
+  }
+}

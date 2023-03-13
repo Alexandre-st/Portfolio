@@ -1,0 +1,157 @@
+@use "../base/mixins" as *;
+
+.project-hero {
+  @include mq(laptop) {
+    max-height: 60rem;
+    overflow: hidden;
+  }
+}
+
+.details {
+  margin-top: 4rem;
+
+  @include mq(laptop) {
+    display: flex;
+    gap: 12.5rem;
+    margin-top: 11.5rem;
+  }
+
+  &-aside {
+    @include mq(laptop) {
+      width: 100%;
+      max-width: 31.47rem;
+    }
+
+    &-content {
+      max-width: 35.5rem;
+    }
+
+    h1 {
+      margin: 2.4rem 0;
+
+      @include mq(tablet) {
+        margin: 3.2rem 0 1.6rem 0;
+      }
+
+      @include mq(laptop) {
+        margin: 4.8rem 0 2.9rem;
+      }
+    }
+
+    &-text {
+      margin: 2.4rem 0;
+    }
+
+    &-normal-text {
+      @include mq(tablet) {
+        display: none;
+      }
+
+      @include mq(laptop) {
+        display: block;
+      }
+    }
+
+    &-link {
+      display: flex;
+      justify-content: space-between;
+      margin: 3rem 0 6rem 0;
+
+      &-a {
+        @include link-button;
+      }
+    }
+  }
+
+  &-content {
+    margin: 4.8rem 0 8rem 0;
+
+    @include mq(tablet) {
+      margin: 4rem 0 8rem 0;
+    }
+
+    @include mq(laptop) {
+      margin: 0 0 6.4rem 0;
+    }
+
+    &-preview {
+      margin: 4rem 0 3.2rem;
+
+      @include mq(laptop) {
+        margin: 4rem 0 3.2rem;
+      }
+    }
+
+    p {
+      margin: 2.8rem 0 4rem 0;
+
+      @include mq(laptop) {
+        margin: 2.8rem 0 5.2rem 0;
+      }
+    }
+  }
+}
+
+// Color for the technos
+.text-infos {
+  color: #002e70;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 3rem;
+
+  &-technos {
+    font-size: 1.4rem;
+  }
+}
+
+// For the link for next or previous project
+.project-link {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+
+  &-right,
+  &-left {
+    margin: 2.4rem 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    @include mq(tablet) {
+      flex-direction: row;
+      align-items: center;
+      gap: 3.2rem;
+    }
+
+    .project-link-title {
+      margin: 1.6rem 0 0rem 0;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    p {
+      opacity: 0.5;
+    }
+  }
+
+  &-img {
+    width: fit-content;
+    margin: 0;
+  }
+
+  &-right {
+    text-align: right;
+    align-items: flex-end;
+
+    @include mq(tablet) {
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+
+  .border-rotate {
+    height: auto;
+  }
+}

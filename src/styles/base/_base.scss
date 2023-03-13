@@ -1,0 +1,94 @@
+@use "./mixins" as *;
+
+:root {
+  font-size: 10px;
+  font-family: "Mulish", sans-serif;
+  background-color: #fff;
+  color: #262626;
+}
+
+.container {
+  width: min(100% - 4rem, 111rem);
+  margin-inline: auto;
+
+  @include mq(tablet) {
+    width: min(100% - 6rem, 111rem);
+  }
+}
+
+.big-title {
+  font-weight: 700;
+  @include big-title;
+}
+
+.middle-title {
+  font-weight: 700;
+  @include mid-title;
+}
+
+.little-title {
+  font-size: 3.2rem;
+  line-height: 3.6rem;
+  font-weight: 400;
+  letter-spacing: -0.285714px;
+}
+
+.link-title {
+  font-size: 2.6rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+  letter-spacing: -0.285714px;
+
+  @include mq(tablet) {
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+  }
+}
+
+.text {
+  font-weight: 300;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  opacity: 0.9;
+}
+
+.small-text {
+  font-size: 1.2rem;
+  line-height: 2.6rem;
+}
+
+.button {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  letter-spacing: 2px;
+
+  &-white {
+    @include button;
+    width: 20.2rem;
+  }
+
+  &-link {
+    width: 12rem;
+  }
+
+  &-work {
+    margin-left: auto;
+    margin-top: 4rem;
+  }
+
+  &-form {
+    &:disabled {
+      background-color: #ffffff;
+      border: 1px solid #262626;
+      font-style: normal;
+      color: #33323d;
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.border {
+  border: 1px solid #262626;
+  opacity: 0.15;
+}
