@@ -1,11 +1,19 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Me from "../assets/images/Profil_Picture.jpg";
 import { projects, skills } from "../data/data";
+import { fadeIn } from "../utils/motion";
 
 const Homepage = () => {
   return (
     <main className="container">
-      <section className="hero">
+      <motion.section
+        className="hero"
+        variants={fadeIn}
+        initial="initial"
+        whileInView={"show"}
+        viewport={{ once: true }}
+      >
         <div className="hero-img">
           <img src={Me} alt="C'est moi, Alexandre Saint-Prix" />
         </div>
@@ -25,8 +33,14 @@ const Homepage = () => {
             Je suis situé à Paris et possède aussi de l’expérience en remote.
           </p>
         </div>
-      </section>
-      <section className="skills">
+      </motion.section>
+      <motion.section
+        className="skills"
+        variants={fadeIn}
+        initial="initial"
+        whileInView={"show"}
+        viewport={{ once: true }}
+      >
         <div className="skills-text">
           <h2 className="skills-text-title big-title">Mes compétences</h2>
           <p className="skills-text-text text">
@@ -43,8 +57,14 @@ const Homepage = () => {
             ))}
           </ul>
         </div>
-      </section>
-      <section className="work">
+      </motion.section>
+      <motion.section
+        className="work"
+        variants={fadeIn}
+        initial="initial"
+        whileInView={"show"}
+        viewport={{ once: true }}
+      >
         <h3 className="work-title big-title">Mes Projets</h3>
         <div className="work-content">
           {projects.filter((project) => project.id < 3).map((element) => {
@@ -58,7 +78,7 @@ const Homepage = () => {
         <Link className="button button-white button-work" to="/portfolio">
           Un peu plus ...
         </Link>
-      </section>
+      </motion.section>
     </main>
   );
 };
