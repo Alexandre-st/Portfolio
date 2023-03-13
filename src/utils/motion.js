@@ -19,4 +19,18 @@ const background = {
   },
 };
 
-export { background };
+const fadeIn = {
+  initial: {
+    y: 200,
+    opacity: 0,
+  },
+  show: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5
+    }
+  }
+}
+
+export { background, fadeIn };
