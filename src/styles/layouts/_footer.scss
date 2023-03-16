@@ -31,6 +31,10 @@
     @include mq(tablet) {
       flex-direction: row;
     }
+
+    @include mq(laptop) {
+      gap: 4.2rem;
+    }
   }
 
   &-social {
