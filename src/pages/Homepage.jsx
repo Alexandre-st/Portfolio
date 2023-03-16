@@ -44,7 +44,7 @@ const Homepage = () => {
           <h2 className="skills-text-title big-title">Mes compétences</h2>
           <p className="skills-text-text text">
             Depuis mes débuts chez O'Clock, je n’ai cessé de développer une
-            expérience solide des standards du développement web. La
+            expérience solide des standards du développement web.<br /> La
             réutilisabilité et l'évolutivité du code sont des aspects
             primordiaux qui doivent être pris en compte, notamment dans la
             considération de l’expérience de l’utilisateur.
