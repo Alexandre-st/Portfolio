@@ -1,8 +1,21 @@
+import archStudioPreview1 from "../assets/images/projects/Arch-1.jpg";
+import archStudioPreview3 from "../assets/images/projects/Arch-2.jpg";
+import archStudioPreview2 from "../assets/images/projects/Arch-3.jpg";
 import archStudio from "../assets/images/projects/archStudio.jpg";
+import designoPreview1 from "../assets/images/projects/Designo-1.jpg";
+import designoPreview3 from "../assets/images/projects/Designo-2.jpg";
+import designoPreview2 from "../assets/images/projects/Designo-3.jpg";
 import designo from "../assets/images/projects/designo.jpg";
+import githubPreview from "../assets/images/projects/Devfinder.jpg";
 import github from "../assets/images/projects/github_user.png";
+import netflimsPreview1 from "../assets/images/projects/Netflims-1.jpg";
+import netflimsPreview3 from "../assets/images/projects/Netflims-2.jpg";
+import netflimsPreview2 from "../assets/images/projects/Netflims-3.jpg";
 import netflims from "../assets/images/projects/netflims.jpg";
 import todoList from "../assets/images/projects/todoList.png";
+import typemasterPreview1 from "../assets/images/projects/Typemaster-1.jpg";
+import typemasterPreview3 from "../assets/images/projects/Typemaster-2.jpg";
+import typemasterPreview2 from "../assets/images/projects/Typemaster-3.jpg";
 import typemaster from "../assets/images/projects/typemaster.jpg";
 
 const projects = [
@@ -19,8 +32,9 @@ const projects = [
     technos: ["REACT", "REACT-ROUTER", "SASS", "FORMIK"],
     link: "https://alexandre-st-arch-studio.netlify.app",
     github: "https://github.com/Alexandre-st/Arch-studio-multipage-website",
-    preview1: "",
-    preview2: "",
+    hero: archStudioPreview1,
+    preview1: archStudioPreview2,
+    preview2: archStudioPreview3,
     prevProject: "todolist",
     nextProject: "netflims",
   },
@@ -45,8 +59,9 @@ const projects = [
     ],
     link: "https://netflims.netlify.app/",
     github: "https://github.com/Alexandre-st/NetFlims",
-    preview1: "",
-    preview2: "",
+    hero: netflimsPreview2,
+    preview1: netflimsPreview2,
+    preview2: netflimsPreview3,
     prevProject: "archstudio",
     nextProject: "designo",
   },
@@ -63,8 +78,9 @@ const projects = [
     technos: ["REACT", "REACT-ROUTER", "LEAFLETJS", "SASS"],
     link: "https://alexandre-st-designo.netlify.app",
     github: "https://github.com/Alexandre-st/Designo-multi-page",
-    preview1: "",
-    preview2: "",
+    hero: designoPreview1,
+    preview1: designoPreview2,
+    preview2: designoPreview3,
     prevProject: "netflims",
     nextProject: "typemaster",
   },
@@ -81,8 +97,9 @@ const projects = [
     technos: ["HTML", "SASS", "PARCEL"],
     link: "https://alexandre-st-typemaster.netlify.app/",
     github: "https://github.com/Alexandre-st/Typemaster-landing-page",
-    preview1: "",
-    preview2: "",
+    hero: typemasterPreview1,
+    preview1: typemasterPreview2,
+    preview2: typemasterPreview3,
     prevProject: "designo",
     nextProject: "devfinder",
   },
@@ -99,8 +116,9 @@ const projects = [
     technos: ["REACT", "SASS", "API", "PROP-TYPES"],
     link: "https://alexandre-st-devfinder.netlify.app",
     github: "https://github.com/Alexandre-st/GitHub-user-search-app",
-    preview1: "",
-    preview2: "",
+    hero: github,
+    preview1: github,
+    preview2: githubPreview,
     prevProject: "typemaster",
     nextProject: "todolist",
   },
@@ -117,8 +135,9 @@ const projects = [
     technos: ["HTML", "SCSS", "JAVASCRIPT"],
     link: "https://alexandre-st-todoapp.netlify.app",
     github: "https://github.com/Alexandre-st/ToDo-List",
-    preview1: "",
-    preview2: "",
+    hero: todoList, 
+    preview1: todoList,
+    preview2: todoList,
     prevProject: "devfinder",
     nextProject: "archstudio",
   },

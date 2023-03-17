@@ -16,7 +16,7 @@ const Project = () => {
       ) : (
         <>
           <div className="project-hero">
-            <img src={isAProject[0].image} alt={isAProject[0].title} />
+            <img src={isAProject[0].hero} alt={isAProject[0].title} />
           </div>
 
           <section className="details">
@@ -41,8 +41,9 @@ const Project = () => {
             <div className="details-content">
               <h2 className="little-title">Description du projet</h2>
               <p className="text">{isAProject[0].infos}</p>
-              <h3 className="little-title">Image statique</h3>
-              <img className="details-content-preview" src={isAProject[0].image} alt={isAProject[0].title} />
+              <h3 className="little-title">Visuel statique</h3>
+              <img className="details-content-preview" src={isAProject[0].preview1} alt={isAProject[0].title} />
+              <img className="details-content-preview" src={isAProject[0].preview2} alt={isAProject[0].title} />
             </div>
           </section>
 
