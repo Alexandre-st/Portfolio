@@ -113,21 +113,11 @@
     overflow: hidden;
 
     @include mq(laptop) {
-      gap: 3rem;
+      gap: 2rem;
     }
 
     &-element {
-      flex: 1 0 20rem;
-      overflow: hidden;
-      max-height: 29.7rem;
-      height: 100%;
-
-      img {
-        position: relative;
-        top: 2.88rem;
-        width: 79.8%;
-        margin: auto;
-      }
+      flex: 1 0 30rem;
     }
   }
 }

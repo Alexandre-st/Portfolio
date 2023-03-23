@@ -17,10 +17,10 @@ const Header = () => {
         <Link 
           to="/"
           onClick={() => setToggleMenu(false)}
-          aria-label="Back to the menu"
+          aria-label="Back to the homepage"
           className="header-img"
         >
-          <img src={logo} alt="AS comme Alexandre Saint-Prix" />
+          <img className="header-img-logo" src={logo} alt="AS comme Alexandre Saint-Prix" />
         </Link>
 
         <nav className="header-nav">

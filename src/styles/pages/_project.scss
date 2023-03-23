@@ -2,7 +2,7 @@
 
 .project-hero {
   @include mq(laptop) {
-    max-height: 60rem;
+    max-height: 70rem;
     overflow: hidden;
   }
 }
