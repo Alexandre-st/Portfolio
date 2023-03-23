@@ -75,10 +75,9 @@ const Homepage = () => {
               return (
                 <div
                   className="work-content-element"
-                  // style={{ background: element.color }}
                   key={element.id}
                 >
-                  <img src={element.hero} alt={element.name} />
+                  <img src={element.hero} alt={`Photo du projet ${element.title}`} />
                 </div>
               );
             })}
