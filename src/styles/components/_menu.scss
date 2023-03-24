@@ -37,9 +37,8 @@
 
     &-link {
       &.active {
-        // text-decoration: underline;
-        // text-decoration-thickness: 2px;
-        font-style: italic;
+        font-weight: 900;
+        text-shadow: 3px 3px 1px #d5d5d5, 3px 3px 4px rgba(0, 0, 0, 0.2);
       }
     }
   }
