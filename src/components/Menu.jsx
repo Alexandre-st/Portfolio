@@ -70,7 +70,7 @@ const Menu = ({ toggleMenu, setToggleMenu }) => {
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1, transition: { duration: 0.3, delay: 0.7 }}}
             >
-              <NavLink to="/mentions-legales">Mentions Légales</NavLink>
+              <NavLink to="/mentions-legales" onClick={openMenu}>Mentions Légales</NavLink>
                 <motion.div className="header-menu-link-social">
                   <a href="https://github.com/Alexandre-st" target="_blank" rel="noopener noreferrer">
                     <img src={github} alt="Lien pour accéder à mon Github" />

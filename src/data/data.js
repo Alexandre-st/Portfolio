@@ -7,8 +7,11 @@ import designoPreview3 from "../assets/images/projects/Designo-2.jpg";
 import designoPreview2 from "../assets/images/projects/Designo-3.jpg";
 import designo from "../assets/images/projects/designo.jpg";
 import githubPreview from "../assets/images/projects/Devfinder.jpg";
+import easybankPreview1 from "../assets/images/projects/easybank-1.jpg";
+import easybankPreview3 from "../assets/images/projects/easybank-2.jpg";
+import easybankPreview2 from "../assets/images/projects/easybank-3.jpg";
+import easybank from "../assets/images/projects/easybank.jpg";
 import github from "../assets/images/projects/github_user.png";
-import netflimsPreview1 from "../assets/images/projects/Netflims-1.jpg";
 import netflimsPreview3 from "../assets/images/projects/Netflims-2.jpg";
 import netflimsPreview2 from "../assets/images/projects/Netflims-3.jpg";
 import netflims from "../assets/images/projects/netflims.jpg";
@@ -82,11 +85,30 @@ const projects = [
     preview1: designoPreview2,
     preview2: designoPreview3,
     prevProject: "netflims",
-    nextProject: "typemaster",
+    nextProject: "easybank",
   },
   {
     id: "3",
     styleName: "projects-container projects-container-reverse",
+    image: easybank,
+    color: "linear-gradient(53.82deg, #33D362 0%, #2AB6D9 100%)",
+    title: "Easybank",
+    linkName: "easybank",
+    infos:
+      "Landing page mise en place avec React et Sass. Première utilisation de framer-motion pour rendre le site plus dynamique. Travail sur la disposition des images en arrière-plan.",
+    type: "Développement Front-End",
+    technos: ["REACT", "SASS", "FRAMER-MOTION"],
+    link: "https://easybank-landing-page-alexandre-st.netlify.app",
+    github: "https://github.com/Alexandre-st/Easybank-landing-page",
+    hero: easybankPreview1,
+    preview1: easybankPreview2,
+    preview2: easybankPreview3,
+    prevProject: "designo",
+    nextProject: "typemaster",
+  },
+  {
+    id: "4",
+    styleName: "projects-container",
     image: typemaster,
     color: "#f16718",
     title: "Typemaster",
@@ -104,8 +126,8 @@ const projects = [
     nextProject: "devfinder",
   },
   {
-    id: "4",
-    styleName: "projects-container",
+    id: "5",
+    styleName: "projects-container projects-container-reverse",
     image: github,
     color: "#1e2b48",
     title: "DevFinder",
@@ -123,8 +145,8 @@ const projects = [
     nextProject: "todolist",
   },
   {
-    id: "5",
-    styleName: "projects-container projects-container-reverse",
+    id: "6",
+    styleName: "projects-container",
     image: todoList,
     color: "linear-gradient(135deg, #5df, #c058f3)",
     title: "Todo List",
@@ -135,7 +157,7 @@ const projects = [
     technos: ["HTML", "SCSS", "JAVASCRIPT"],
     link: "https://alexandre-st-todoapp.netlify.app",
     github: "https://github.com/Alexandre-st/ToDo-List",
-    hero: todoList, 
+    hero: todoList,
     preview1: todoList,
     preview2: todoList,
     prevProject: "devfinder",
@@ -156,7 +178,7 @@ const skills = [
   { title: "Styled-Components" },
   { title: "TailwindCSS" },
   { title: "Redux" },
-  { title: "Node" },
+  { title: "Node.JS" },
   { title: "Express" },
   { title: "SQL" },
   { title: "MySQL" },
@@ -169,6 +191,7 @@ const skills = [
   { title: "Figma" },
   { title: "Framer-Motion" },
   { title: "Opquast" },
+  { title: "Netlify" },
 ];
 
 export { projects, skills };
