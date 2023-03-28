@@ -28,12 +28,6 @@
       flex: 1;
     }
 
-    @include mq(laptop) {
-      p {
-        line-height: 3rem;
-      }
-    }
-
     &-title {
       @include big-title;
       @include content-margin;
@@ -58,7 +52,7 @@
   @include mq(tablet) {
     display: flex;
     align-items: center;
-    gap: 7rem;
+    gap: 5rem;
   }
 
   &-text {

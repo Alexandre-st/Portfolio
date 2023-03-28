@@ -177,6 +177,7 @@ const skills = [
   { title: "CSS Modules" },
   { title: "Styled-Components" },
   { title: "TailwindCSS" },
+  { title: "Jest" },
   { title: "Redux" },
   { title: "Node.JS" },
   { title: "Express" },
