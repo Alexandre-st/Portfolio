@@ -10,7 +10,7 @@ import githubPreview from "../assets/images/projects/Devfinder.jpg";
 import easybankPreview1 from "../assets/images/projects/easybank-1.jpg";
 import easybankPreview3 from "../assets/images/projects/easybank-2.jpg";
 import easybankPreview2 from "../assets/images/projects/easybank-3.jpg";
-import easybank from "../assets/images/projects/easybank.jpg";
+import easybank from "../assets/images/projects/easyBank.jpg";
 import github from "../assets/images/projects/github_user.png";
 import netflimsPreview3 from "../assets/images/projects/Netflims-2.jpg";
 import netflimsPreview2 from "../assets/images/projects/Netflims-3.jpg";
