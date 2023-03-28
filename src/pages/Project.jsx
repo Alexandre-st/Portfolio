@@ -16,7 +16,7 @@ const Project = () => {
       ) : (
         <>
           <div className="project-hero">
-            <img src={isAProject[0].image} alt={isAProject[0].title} />
+            <img src={isAProject[0].hero} alt={isAProject[0].title} />
           </div>
 
           <section className="details">
@@ -41,14 +41,15 @@ const Project = () => {
             <div className="details-content">
               <h2 className="little-title">Description du projet</h2>
               <p className="text">{isAProject[0].infos}</p>
-              <h3 className="little-title">Image statique</h3>
-              <img className="details-content-preview" src={isAProject[0].image} alt={isAProject[0].title} />
+              <h3 className="little-title">Visuel statique</h3>
+              <img className="details-content-preview" src={isAProject[0].preview1} alt={`Visuel de la version desktop du projet ${isAProject[0].title}`} />
+              <img className="details-content-preview" src={isAProject[0].preview2} alt={`Visuel de la version mobile du projet ${isAProject[0].title}`} />
             </div>
           </section>
 
           <section className="project-link">
             <div className="project-link-left">
-              <img className="project-link-img" src={ArrowLeft} alt="Arrow towards the previous project" />
+              <img className="project-link-img" src={ArrowLeft} alt="Projet précédent" />
               <Link to={`/portfolio/${isAProject[0].prevProject}`}>
                 <h4 className="project-link-title link-title">
                   {isAProject[0].prevProject}
@@ -58,7 +59,7 @@ const Project = () => {
             </div>
             <div className="border border-rotate" />
             <div className="project-link-right">
-              <img className="project-link-img" src={ArrowRight} alt="Arrow towards the next project" />
+              <img className="project-link-img" src={ArrowRight} alt="Projet suivant" />
               <Link to={`/portfolio/${isAProject[0].nextProject}`}>
                 <h4 className="project-link-title link-title">
                   {isAProject[0].nextProject}

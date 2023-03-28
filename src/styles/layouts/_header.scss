@@ -28,10 +28,13 @@
   }
 
   &-img {
-    width: 5rem;
-    height: 5rem;
     position: relative;
     z-index: 6;
+
+    &-logo {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 
   &-nav {

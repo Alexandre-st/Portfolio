@@ -52,7 +52,7 @@
   @include mq(tablet) {
     display: flex;
     align-items: center;
-    gap: 7rem;
+    gap: 5rem;
   }
 
   &-text {
@@ -113,20 +113,21 @@
     overflow: hidden;
 
     @include mq(laptop) {
-      gap: 3rem;
+      gap: 2rem;
+
+      :nth-child(2) {
+        margin-top: 6rem;
+      }
+
+      :nth-child(3) {
+        margin-top: 12rem;
+      }
     }
 
     &-element {
-      flex: 1 0 20rem;
-      overflow: hidden;
-      max-height: 29.7rem;
-      height: 100%;
-
+      flex: 1 0 30rem;
       img {
-        position: relative;
-        top: 2.88rem;
-        width: 79.8%;
-        margin: auto;
+        border-radius: 1rem;
       }
     }
   }
