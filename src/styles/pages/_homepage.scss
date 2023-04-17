@@ -9,6 +9,11 @@
     flex: 1;
   }
 
+  @include mq(desktop) {
+    gap: 6rem;
+    justify-content: space-between;
+  }
+
   &-img {
     @include mq(tablet) {
       flex: 1;
@@ -26,6 +31,10 @@
       margin-top: 0;
       text-align: right;
       flex: 1;
+    }
+
+    @include mq(laptop) {
+      text-align: start;
     }
 
     &-title {
