@@ -23,13 +23,12 @@ const Homepage = () => {
             <span className="hero-text-title-span">Développeur Front-End</span>
           </h1>
           <p className="hero-text-text text">
-            Je suis un développeur front-end qui se concentre sur l’écriture
+            Je suis un développeur front-end depuis deux ans qui se concentre sur l’écriture
             accessible d’un code HTML, d'un code JavaScript propre et sur
-            l’utilisation de pratiques modernes du CSS. J’utilise le plus
-            souvent React, mais je peux m’adapter à tous les outils demandés.
+            l’utilisation de pratiques modernes du CSS. J’utilise React, mais je peux m’adapter à tous les outils demandés.
           </p>
           <p className="text">
-            Je suis situé à Paris et possède de l’expérience en remote.
+            Je travaille à Paris et en remote si besoin.
           </p>
         </div>
       </motion.section>
