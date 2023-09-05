@@ -35,6 +35,11 @@ const Header = () => {
                 PORTFOLIO
               </NavLink>
             </li>
+            {/* <li className="nav-link">
+              <NavLink style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/about">
+                À PROPOS
+              </NavLink>
+            </li> */}
             <li className="nav-link">
               <NavLink style={({ isActive }) => (isActive ? activeStyle : undefined)} to="/contact">
                 CONTACT
