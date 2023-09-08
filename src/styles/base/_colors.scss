@@ -1,0 +1,18 @@
+// need to check this
+// https://github.com/BrianRuizy/b-r.io/blob/main/components/ThemeSwitcher.tsx
+:root {
+  // White
+  --bg-white: #fff;
+  --text-white: #262626;
+  // Dark
+  --bg-dark: #121212;
+  --text-dark: #fff;
+
+  --background: var(--bg-white);
+  --text-color: var(--text-white);
+}
+
+.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}

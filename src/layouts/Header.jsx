@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Menu from "../components/Menu";
+import darkLogo from "/logo-dark.jpg";
 import logo from "/logo.jpg";
+
 //! Penser à attribuer un id au label du formulaire de contact
+//? Link intéressant pour le dark mode 
+// https://m2.material.io/design/color/dark-theme.html#properties
 
 const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -51,7 +55,7 @@ const Header = () => {
         >
           <img
             className="header-img-logo"
-            src={logo}
+            src={mode === "dark" ? darkLogo : logo}
             alt="AS comme Alexandre Saint-Prix"
           />
         </Link>
@@ -84,7 +88,7 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        {/* {mode === "dark" ? (
+        {mode === "dark" ? (
           <button onClick={() => onSelectMode("light")}>
             <p>Light</p>
           </button>
@@ -92,7 +96,7 @@ const Header = () => {
           <button onClick={() => onSelectMode("dark")}>
             <p>Dark</p>
           </button>
-        )} */}
+        )}
 
         <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
       </div>

@@ -1,6 +1,7 @@
 // == BASE == //
-@use "./base/base";
 @use "./base/reset";
+@use "./base/colors";
+@use "./base/base";
 
 // == LAYOUTS == //
 @use "./layouts/header";
