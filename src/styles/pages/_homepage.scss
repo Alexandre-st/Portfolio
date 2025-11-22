@@ -38,10 +38,10 @@
     }
 
     &-title {
-      @include big-title;
-      @include content-margin;
       display: flex;
       flex-direction: column;
+      @include big-title;
+      @include content-margin;
 
       &-span {
         font-weight: 600;

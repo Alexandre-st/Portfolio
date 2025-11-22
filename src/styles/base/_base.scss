@@ -63,8 +63,8 @@
   letter-spacing: 2px;
 
   &-white {
-    @include button;
     width: 20.2rem;
+    @include button;
   }
 
   &-link {
