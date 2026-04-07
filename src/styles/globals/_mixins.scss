@@ -1,0 +1,61 @@
+@use 'sass:math';
+@use 'sass:map';
+@use './variables' as *;
+
+$breakpoints: (
+        sm: 37.5rem, /* 600px */
+        md : 48rem, /* 768px */
+        lg : 64rem, /* 1024px */
+        xl : 87.5rem, /* 1400px */
+);
+
+@mixin media-breakpoint-up($name) {
+  @media (min-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($name) {
+  @media (max-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}
+
+@function pxToRem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers';
+  }
+}
+
+@mixin wrapper {
+  width: min(100% - var(--spacing-400), var(--layout-max-width));
+  margin-inline: auto;
+
+  @include media-breakpoint-up(md) {
+    width: min(100% - var(--spacing-1000), var(--layout-max-width));
+  }
+}
+
+@mixin preset($level) {
+  @if $level == 1 {
+    font-size: pxToRem(32);
+    line-height: pxToRem(38.4);
+    font-weight: 700;
+  } @else if $level == 2 {
+    font-size: pxToRem(20);
+    line-height: pxToRem(24);
+    font-weight: 700;
+  } @else if $level == 3 {
+    font-size: pxToRem(16);
+    line-height: pxToRem(24);
+    font-weight: 700;
+  } @else if $level == 4 {
+    font-size: pxToRem(14);
+    line-height: pxToRem(21);
+  } @else if $level == 5 {
+    font-size: pxToRem(12);
+    line-height: pxToRem(18);
+  }
+}

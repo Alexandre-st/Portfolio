@@ -1,0 +1,41 @@
+@use './mixins' as *;
+
+.preset-1 {
+  font-size: pxToRem(32);
+  line-height: pxToRem(38.4);
+  font-weight: 700;
+}
+
+.preset-2 {
+  font-size: pxToRem(20);
+  line-height: pxToRem(24);
+  font-weight: 700;
+}
+
+.preset-3 {
+  font-size: pxToRem(16);
+  line-height: pxToRem(24);
+  font-weight: 700;
+}
+
+.preset-4 {
+  font-size: pxToRem(14);
+  line-height: pxToRem(21);
+}
+
+//.preset-bold-4 {
+//  font-size: pxToRem(14);
+//  line-height: pxToRem(21);
+//  font-weight: 700;
+//}
+
+.preset-5 {
+  font-size: pxToRem(12);
+  line-height: pxToRem(18);
+}
+
+//.preset-bold-5 {
+//  font-size: pxToRem(12);
+//  line-height: pxToRem(18);
+//  font-weight: 700;
+//}
