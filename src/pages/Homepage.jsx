@@ -19,7 +19,7 @@ const Homepage = () => {
         </div>
         <div className="hero-text">
           <h1 className="hero-text-title">
-            <span>Salut, c’est Alexandre.</span>
+            <span>Salut, c’est Alexandre. v1</span>
             <span className="hero-text-title-span">Développeur Front-End</span>
           </h1>
           <p className="hero-text-text text">
