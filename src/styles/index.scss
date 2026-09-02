@@ -1,12 +1,21 @@
+// Single global stylesheet — imported once in src/routes/__root.tsx.
+// All styles live here (no co-located *.module.scss). Add a partial to the right
+// section below and @use it. Components reference these classes by name.
+
 // == BASE == //
 @use './globals/reset';
+@use './globals/variables';
 @use './globals/fonts';
 @use './globals/typography';
 @use './globals/common';
 
 // == LAYOUTS == //
+@use './layouts/header';
+@use './layouts/footer';
 
 // == ROUTES == //
-
+@use './routes/home';
 
 // == COMPONENTS == //
+@use './components/button';
+@use './components/project-card';

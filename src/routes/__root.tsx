@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import type { ReactNode } from "react";
+import { MotionConfig } from "motion/react";
 import { createRootRouteWithContext, HeadContent, Scripts } from "@tanstack/react-router";
 import { DefaultCatchBoundary } from "~/components/DefaultCatchBoundary";
 import { NotFound } from "~/components/NotFound";
@@ -18,12 +19,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 content: "width=device-width, initial-scale=1"
             },
             ...seo({
-                title: "TanStack Start Starter",
-                keywords: "tanstack, react-router, starter, template",
-                description: "Starter template for TanStack Start with React Router"
+                title: "Alexandre Saint-Prix — Front-end developer",
+                keywords: "Alexandre Saint-Prix, front-end developer, react, portfolio",
+                description: "Front-end developer building calm, accessible interfaces — design systems and production React apps."
             }),
             {
-                title: "TanStack Start Starter",
+                title: "Alexandre Saint-Prix — Front-end developer",
             }
         ],
         links: [
@@ -57,7 +58,7 @@ function ShellComponent({ children }: Readonly<{ children: ReactNode }>) {
             <HeadContent />
         </head>
         <body>
-            {children}
+            <MotionConfig reducedMotion="user">{children}</MotionConfig>
             <Scripts />
         </body>
         </html>

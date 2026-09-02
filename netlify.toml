@@ -1,9 +1,23 @@
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
+# Static (SSG) deploy. `yarn build` prerenders routes to HTML in dist/client
+# (see vite.config.ts → tanstackStart.prerender). We publish that folder as
+# plain static files — no SSR server, no SPA catch-all needed.
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 404
+[build]
+  command = "yarn build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Content-hashed build assets never change → cache them hard.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML should always be revalidated so deploys go live immediately
+# (important behind Cloudflare — see docs/IMPLEMENTATION_PLAN.md → Deployment).
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

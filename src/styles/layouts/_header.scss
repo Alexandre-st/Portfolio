@@ -1,0 +1,29 @@
+@use '../globals/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-block: var(--spacing-200);
+  background-color: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  backdrop-filter: blur(8px);
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    font-weight: 700;
+  }
+
+  &__links {
+    display: none;
+    gap: var(--spacing-300);
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+  }
+}

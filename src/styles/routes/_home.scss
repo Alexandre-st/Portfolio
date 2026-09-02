@@ -1,0 +1,67 @@
+@use '../globals/mixins' as *;
+
+/* ===== HERO ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  padding-block: var(--spacing-1000);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+    max-width: 46rem;
+  }
+
+  &__eyebrow {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    @include preset(4);
+  }
+
+  &__title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1.05;
+    font-weight: 700;
+  }
+
+  &__lead {
+    color: var(--color-muted);
+    @include preset(2);
+    font-weight: 400;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-200);
+    margin-top: var(--spacing-200);
+  }
+}
+
+/* ===== SELECTED WORK ===== */
+.work {
+  padding-block: var(--spacing-1000);
+
+  &__heading {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-500);
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--spacing-400);
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

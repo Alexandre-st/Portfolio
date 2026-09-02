@@ -2,7 +2,19 @@
   /* ===== SIZES ===== */
   --layout-max-width: 79.5rem; // 1272px
 
-  /* ===== PALETTE ===== */
+  /* ===== PALETTE (PLACEHOLDER — replace with values from portfolio.pen) ===== */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey-100: #f4f4f5;
+  --color-grey-300: #d4d4d8;
+  --color-grey-500: #71717a;
+  --color-grey-700: #3f3f46;
+  --color-grey-900: #18181b;
+  --color-accent: #6c5ce7;
+  --color-accent-contrast: #ffffff;
+  --color-bg: var(--color-white);
+  --color-fg: var(--color-grey-900);
+  --color-muted: var(--color-grey-500);
 
   /* ===== SPACING ===== */
   --spacing-50: 0.25rem; // 4px
@@ -22,4 +34,10 @@
   --radius-200: 1rem; // 16px
 
   /* ===== FONTS ===== */
+
+  /* ===== MOTION ===== */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
 }

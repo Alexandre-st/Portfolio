@@ -13,7 +13,14 @@ const config = defineConfig({
         viteTsConfigPaths({
             projects: ["./tsconfig.json"],
         }),
-        tanstackStart(),
+        tanstackStart({
+            // Static site generation: crawl from "/" and emit real HTML per route
+            // into dist/client. Deploy that folder as static files (see netlify.toml).
+            prerender: {
+                enabled: true,
+                crawlLinks: true,
+            },
+        }),
         // react's vite plugin must come after start's vite plugin
         viteReact(),
     ],

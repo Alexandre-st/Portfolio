@@ -1,9 +1,6 @@
 {
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": [
-    "node_modules",
-    "packages",
-  ],
+  "exclude": ["node_modules", "packages"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "moduleResolution": "Bundler",

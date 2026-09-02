@@ -1,0 +1,63 @@
+@use '../globals/mixins' as *;
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  border-radius: var(--radius-200);
+  overflow: hidden;
+  background-color: var(--color-grey-100);
+  transition: transform var(--duration-base) var(--ease-out);
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &__media {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--duration-slow) var(--ease-out);
+    }
+  }
+
+  &:hover &__media img {
+    transform: scale(1.04);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-150);
+    padding: 0 var(--spacing-300) var(--spacing-300);
+  }
+
+  &__title {
+    @include preset(2);
+  }
+
+  &__description {
+    color: var(--color-muted);
+    @include preset(4);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-100);
+    margin-top: var(--spacing-100);
+  }
+
+  &__tag {
+    padding: var(--spacing-50) var(--spacing-150);
+    border-radius: var(--radius-50);
+    background-color: var(--color-bg);
+    color: var(--color-muted);
+    @include preset(5);
+  }
+}

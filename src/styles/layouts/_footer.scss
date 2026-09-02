@@ -1,0 +1,29 @@
+@use '../globals/mixins' as *;
+
+.footer {
+  padding-block: var(--spacing-1000);
+  margin-top: var(--spacing-1000);
+  border-top: 1px solid var(--color-grey-300);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-400);
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__tagline {
+    @include preset(2);
+  }
+
+  &__socials {
+    display: flex;
+    gap: var(--spacing-300);
+    color: var(--color-muted);
+  }
+}

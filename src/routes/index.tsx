@@ -1,13 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Footer } from "~/components/layout/Footer";
+import { Header } from "~/components/layout/Header";
+import { Hero } from "~/features/hero";
+import { Portfolio } from "~/features/portfolio";
 
 export const Route = createFileRoute("/")({
-    component: Home
+    component: Home,
 });
 
 function Home() {
     return (
-        <main className="main">
-            <h1>Hello Tanstack Start !!</h1>
-        </main>
+        <>
+            <Header />
+            <main>
+                <Hero />
+                <Portfolio />
+            </main>
+            <Footer />
+        </>
     );
 }
