@@ -1,9 +1,6 @@
-[[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
+[build]
+  command = "yarn build"
+  publish = "dist/client"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 404
+# Les pages sont pré-rendues en HTML statique.
+# Netlify sert automatiquement /404.html (statut 404) pour les URL inconnues.

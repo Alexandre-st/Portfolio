@@ -1,0 +1,23 @@
+{
+  "printWidth": 100,
+  "tabWidth": 4,
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": ["*.scss"],
+      "options": {
+        "tabWidth": 2,
+        "singleQuote": false,
+        "printWidth": 80
+      }
+    },
+    {
+      "files": ["*.json", "*.md", "*.yml", "*.yaml"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}
