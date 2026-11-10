@@ -1,3 +1,4 @@
+@use "./breakpoints" as *;
 @use "./mixins" as *;
 
 :root {
@@ -11,7 +12,7 @@
   width: min(100% - 4rem, 111rem);
   margin-inline: auto;
 
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     width: min(100% - 6rem, 111rem);
   }
 }
@@ -39,7 +40,7 @@
   font-weight: 400;
   letter-spacing: -0.285714px;
 
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     font-size: 3.2rem;
     line-height: 3.6rem;
   }

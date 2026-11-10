@@ -1,0 +1,11 @@
+@use "sass:math";
+
+@function px-to-rem($pixel, $base: 16px) {
+  @if math.is-unitless($pixel) {
+    $pixel: $pixel * 1px;
+  }
+  @if math.unit($pixel) != "px" {
+    @error 'px-to-rem() expects a number or a px value, got `#{$pixel}`';
+  }
+  @return math.div($pixel, $base) * 1rem;
+}

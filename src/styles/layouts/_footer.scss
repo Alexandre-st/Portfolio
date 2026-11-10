@@ -1,10 +1,11 @@
+@use "../base/breakpoints" as *;
 @use "../base/mixins" as *;
 
 .footer {
   background-color: #f1f2f6;
   margin-top: 5.6rem;
 
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     margin-top: 12rem;
   }
 
@@ -17,7 +18,7 @@
     display: flex;
     justify-content: space-between;
 
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       padding: 4rem 0;
     }
   }
@@ -28,11 +29,11 @@
     gap: 3rem;
     text-transform: uppercase;
 
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       flex-direction: row;
     }
 
-    @include mq(laptop) {
+    @media (width >= $bp-laptop) {
       gap: 4.2rem;
     }
   }

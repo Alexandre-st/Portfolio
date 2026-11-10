@@ -1,33 +1,16 @@
-// To setup Media Queries
-@mixin mq($breakpoint) {
-  @if $breakpoint == tablet {
-    @media (min-width: 768px) {
-      @content;
-    }
-  }
-  @if $breakpoint == laptop {
-    @media (min-width: 1024px) {
-      @content;
-    }
-  }
-  @if $breakpoint == desktop {
-    @media (min-width: 1200px) {
-      @content;
-    }
-  }
-}
+@use "./breakpoints" as *;
 
 @mixin big-title {
   font-size: 2.5rem;
   line-height: 3.5rem;
   letter-spacing: -0.357143px;
 
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     font-size: 4rem;
     line-height: 5.5rem;
   }
 
-  @include mq(laptop) {
+  @media (width >= $bp-laptop) {
     font-size: 4.5rem;
     line-height: 6.5rem;
   }
@@ -38,7 +21,7 @@
   line-height: 3.5rem;
   letter-spacing: -0.357143px;
 
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     font-size: 4rem;
     line-height: 5.5rem;
   }
@@ -88,7 +71,7 @@
 @mixin section-margin {
   margin-top: 10rem;
 
-  @include mq(laptop) {
+  @media (width >= $bp-laptop) {
     margin-top: 16rem;
   }
 }
@@ -96,11 +79,11 @@
 @mixin content-margin {
   margin-bottom: 3.2rem;
 
-  @include mq(laptop) {
+  @media (width >= $bp-laptop) {
     margin-bottom: 3.5rem;
   }
 
-  @include mq(desktop) {
+  @media (width >= $bp-desktop) {
     margin-bottom: 5.5rem;
   }
 }

@@ -1,21 +1,22 @@
 // https://github-contributions.vercel.app/
+@use "../base/breakpoints" as *;
 @use "../base/mixins" as *;
 
 .hero {
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     display: flex;
     gap: 5rem;
     align-items: center;
     flex: 1;
   }
 
-  @include mq(desktop) {
+  @media (width >= $bp-desktop) {
     gap: 6rem;
     justify-content: space-between;
   }
 
   &-img {
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       flex: 1;
     }
 
@@ -27,13 +28,13 @@
   &-text {
     margin-top: 6rem;
 
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       margin-top: 0;
       text-align: right;
       flex: 1;
     }
 
-    @include mq(laptop) {
+    @media (width >= $bp-laptop) {
       text-align: start;
     }
 
@@ -58,14 +59,14 @@
 .skills {
   @include section-margin;
 
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     display: flex;
     align-items: center;
     gap: 5rem;
   }
 
   &-text {
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       flex: 1;
     }
 
@@ -77,11 +78,11 @@
   &-content {
     margin-top: 4rem;
 
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       flex: 1;
     }
 
-    @include mq(laptop) {
+    @media (width >= $bp-laptop) {
       margin-top: 6rem;
     }
 
@@ -121,7 +122,7 @@
     gap: 4rem;
     overflow: hidden;
 
-    @include mq(laptop) {
+    @media (width >= $bp-laptop) {
       gap: 2rem;
 
       :nth-child(2) {

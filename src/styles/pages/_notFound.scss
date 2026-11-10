@@ -1,3 +1,4 @@
+@use "../base/breakpoints" as *;
 @use "../base/mixins" as *;
 
 .not-found {
@@ -8,7 +9,7 @@
   min-height: 60vh;
   padding-block: 4rem;
 
-  @include mq(laptop) {
+  @media (width >= $bp-laptop) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -41,7 +42,7 @@
     font-weight: 600;
     color: #262626;
 
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       width: 10rem;
       height: 10rem;
       font-size: 5rem;
@@ -62,7 +63,7 @@
     .button-white {
       width: 100%;
 
-      @include mq(tablet) {
+      @media (width >= $bp-tablet) {
         width: 16rem;
       }
     }

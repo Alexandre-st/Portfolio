@@ -1,8 +1,9 @@
+@use "../base/breakpoints" as *;
 @use "../base/mixins" as *;
 
 .contact {
   &-hero {
-    @include mq(desktop) {
+    @media (width >= $bp-desktop) {
       &-title {
         margin-right: 0;
       }

@@ -1,3 +1,4 @@
+@use "../base/breakpoints" as *;
 @use "../base/mixins" as *;
 
 .header {
@@ -7,11 +8,11 @@
   padding: 3.2rem 0 4rem 0;
   position: relative;
 
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     padding: 6.4rem 0 4.7rem 0;
   }
 
-  @include mq(laptop) {
+  @media (width >= $bp-laptop) {
     padding: 6.4rem 0 5.4rem 0;
   }
 
@@ -40,7 +41,7 @@
   &-nav {
     display: none;
 
-    @include mq(tablet) {
+    @media (width >= $bp-tablet) {
       display: block;
     }
 

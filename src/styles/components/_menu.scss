@@ -1,7 +1,8 @@
+@use "../base/breakpoints" as *;
 @use "../base/mixins" as *;
 
 .header-menu {
-  @include mq(tablet) {
+  @media (width >= $bp-tablet) {
     display: none;
   }
 

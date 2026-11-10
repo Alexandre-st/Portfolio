@@ -1,7 +1,15 @@
-import { HeadContent, Scripts, createRootRoute, useRouter } from '@tanstack/react-router';
+import {
+    HeadContent,
+    Outlet,
+    Scripts,
+    createRootRoute,
+    useHydrated,
+    useRouter,
+} from '@tanstack/react-router';
 import { LazyMotion, MotionConfig } from 'motion/react';
 import type { ReactNode } from 'react';
-import RootLayout from '~/layouts/RootLayout';
+import Footer from '~/layouts/Footer';
+import Header from '~/layouts/Header';
 import ErrorPage from '~/pages/ErrorPage';
 import NotFound from '~/pages/NotFound';
 import appCss from '~/styles/index.scss?url';
@@ -74,7 +82,7 @@ function RootDocument({ children }: { children: ReactNode }) {
             <head>
                 <HeadContent />
             </head>
-            {/* Repère du shell SPA (404.html), lu par src/client.tsx */}
+            {/* Repère du shell SPA (404.html), lu par RootLayout pendant l'hydratation */}
             <body data-spa-shell={router.isShell() ? '' : undefined}>
                 <noscript> Il faut activer JavaScript pour pouvoir naviguer sur le site. </noscript>
                 {/* reducedMotion="user" : coupe les déplacements si prefers-reduced-motion est actif */}
@@ -87,5 +95,27 @@ function RootDocument({ children }: { children: ReactNode }) {
                 <Scripts />
             </body>
         </html>
+    );
+}
+
+function RootLayout() {
+    const router = useRouter();
+    const hydrated = useHydrated();
+
+    // Le shell SPA n'est servi que comme 404.html : il contient déjà la page introuvable.
+    // Côté client, on rend la même chose pendant l'hydratation pour que le HTML corresponde,
+    // puis le router prend le relais (route inconnue ou projet inexistant).
+    const isShell =
+        router.isShell() ||
+        (!hydrated &&
+            typeof document !== 'undefined' &&
+            document.body.hasAttribute('data-spa-shell'));
+
+    return (
+        <>
+            <Header />
+            {isShell ? <NotFound /> : <Outlet />}
+            <Footer />
+        </>
     );
 }

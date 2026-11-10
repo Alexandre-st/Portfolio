@@ -2,24 +2,24 @@ import { Link } from '@tanstack/react-router';
 import github from '~/assets/icons/github-mark.svg';
 import linkedIn from '~/assets/icons/iconmonstr-linkedin-3.svg';
 import twitter from '~/assets/icons/twitter.svg';
+import { FOOTER_LINKS } from '~/constants/navLinks';
 
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-container container">
                 <ul className="footer-content-list">
-                    <li className="nav-link">
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className="nav-link">
-                        <Link to="/portfolio/">Portfolio</Link>
-                    </li>
-                    <li className="nav-link">
-                        <Link to="/contact/">Contact</Link>
-                    </li>
-                    <li className="nav-link">
-                        <Link to="/mentions-legales/">Mentions Légales</Link>
-                    </li>
+                    {FOOTER_LINKS.map((link) => (
+                        <li key={link.url} className="nav-link">
+                            <Link
+                                activeProps={{ className: 'active' }}
+                                activeOptions={{ exact: link.url === '/' }}
+                                to={link.url}
+                            >
+                                {link.label}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
 
                 <div className="footer-social">

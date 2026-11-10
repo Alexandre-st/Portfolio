@@ -1,14 +1,10 @@
-import { useState, type CSSProperties } from 'react';
+import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import Menu from '~/components/Menu';
+import { NAV_LINKS } from '~/constants/navLinks';
 
 const Header = () => {
-    const [toggleMenu, setToggleMenu] = useState(false);
-
-    const activeStyle: CSSProperties = {
-        fontWeight: '900',
-        color: '#000000',
-    };
+    const [toggleMenu, setToggleMenu] = useState<boolean>(false);
 
     return (
         <header className="container">
@@ -28,25 +24,17 @@ const Header = () => {
 
                 <nav className="header-nav">
                     <ul className="header-nav-list">
-                        <li className="nav-link">
-                            <Link
-                                activeProps={{ style: activeStyle }}
-                                activeOptions={{ exact: true }}
-                                to="/"
-                            >
-                                HOME
-                            </Link>
-                        </li>
-                        <li className="nav-link">
-                            <Link activeProps={{ style: activeStyle }} to="/portfolio/">
-                                PORTFOLIO
-                            </Link>
-                        </li>
-                        <li className="nav-link">
-                            <Link activeProps={{ style: activeStyle }} to="/contact/">
-                                CONTACT
-                            </Link>
-                        </li>
+                        {NAV_LINKS.map((link) => (
+                            <li key={link.url} className="nav-link">
+                                <Link
+                                    activeProps={{ className: 'active' }}
+                                    activeOptions={{ exact: link.url === '/' }}
+                                    to={link.url}
+                                >
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
                 <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />

@@ -1,9 +1,10 @@
+@use '../base/breakpoints' as *;
 @use '../base/mixins' as *;
 
 .contact-form {
   margin: 8rem 0 16rem;
 
-  @include mq(laptop) {
+  @media (width >= $bp-laptop) {
     margin: 10rem 0 26rem 0;
   }
 }
@@ -13,7 +14,7 @@
   max-width: 63.5rem;
   margin: auto;
 
-  @include mq(laptop) {
+  @media (width >= $bp-laptop) {
     margin-top: 4rem;
   }
 
