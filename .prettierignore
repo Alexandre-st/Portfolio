@@ -1,0 +1,8 @@
+portfolio-v1
+dist
+.output
+.tanstack
+.netlify
+node_modules
+yarn.lock
+src/routeTree.gen.ts

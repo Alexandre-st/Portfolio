@@ -2,20 +2,30 @@
 
 ## Available scripts
 
-In the project director, you can run this command to install the dependencies :
+In the project directory, you can run these commands :
 
-### `yarn`
-
-### `yarn dev`
+| Command          | Description                                          |
+| ---------------- | ---------------------------------------------------- |
+| `yarn`           | Install the dependencies                             |
+| `yarn dev`       | Start the dev server                                 |
+| `yarn build`     | Build and prerender the static site in `dist/client` |
+| `yarn preview`   | Preview the production build                         |
+| `yarn typecheck` | Check the TypeScript types                           |
+| `yarn lint`      | Lint the code with ESLint                            |
+| `yarn format`    | Format the code with Prettier                        |
 
 ## My process
 
-### Built width :
+### Built with :
 
-- [ViteJS](https://vitejs.dev/) - Build tool
-- [ReactJS](https://fr.reactjs.org/)
+- [TanStack Start](https://tanstack.com/start) - Full-stack framework (static prerendering)
+- [TanStack Router](https://tanstack.com/router) - Type-safe file-based routing
+- [TanStack Form](https://tanstack.com/form) - Contact form
+- [React](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/) - Build tool
 - Preprocessor SASS
-- [Framer-motion](https://www.framer.com/motion/)
+- [Motion](https://motion.dev/) - Animations
+- ESLint & Prettier
 
 ## Author
 

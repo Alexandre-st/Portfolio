@@ -4,26 +4,112 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20rem;
-
-  @include mq(tablet) {
-    margin-bottom: 20.5rem;
-  }
+  gap: 4rem;
+  min-height: 60vh;
+  padding-block: 4rem;
 
   @include mq(laptop) {
-    margin-bottom: 29rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  @include mq(desktop) {
-    margin-bottom: 35rem;
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    max-width: 54rem;
   }
 
-  &-text {
-    text-align: center;
+  &-eyebrow {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
 
-    &-link {
-      margin-top: 2rem;
-      text-decoration: underline;
+  &-tiles {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  &-tile {
+    display: grid;
+    place-items: center;
+    width: 8rem;
+    height: 8rem;
+    border: 1px solid #262626;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #262626;
+
+    @include mq(tablet) {
+      width: 10rem;
+      height: 10rem;
+      font-size: 5rem;
     }
+
+    &-dark {
+      background-color: #262626;
+      color: #ffffff;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    margin-top: 1.6rem;
+
+    .button-white {
+      width: 100%;
+
+      @include mq(tablet) {
+        width: 16rem;
+      }
+    }
+  }
+
+  &-img {
+    width: min(100%, 40rem);
+  }
+}
+
+/* === MOTION === */
+/* Les tuiles tombent l'une après l'autre, puis le texte apparaît.
+   Transform + opacity uniquement, désactivé sous prefers-reduced-motion. */
+@keyframes not-found-drop-in {
+  from {
+    transform: translateY(-1.6rem) scale(0.94);
+    opacity: 0;
+  }
+}
+
+@keyframes not-found-rise-in {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .not-found-tile {
+    animation: not-found-drop-in 240ms cubic-bezier(0.23, 1, 0.32, 1) both;
+
+    &:nth-child(1) {
+      animation-delay: 60ms;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 160ms;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 260ms;
+    }
+  }
+
+  .not-found-title,
+  .not-found-text,
+  .not-found-actions {
+    animation: not-found-rise-in 300ms cubic-bezier(0.23, 1, 0.32, 1) 360ms both;
   }
 }
