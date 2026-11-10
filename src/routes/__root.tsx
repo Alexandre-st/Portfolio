@@ -1,14 +1,18 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router';
+import { HeadContent, Scripts, createRootRoute, useRouter } from '@tanstack/react-router';
+import { LazyMotion, MotionConfig } from 'motion/react';
 import type { ReactNode } from 'react';
-import RootLayout from '../layouts/RootLayout';
-import NotFound from '../pages/NotFound';
-import appCss from '../styles/index.scss?url';
+import RootLayout from '~/layouts/RootLayout';
+import ErrorPage from '~/pages/ErrorPage';
+import NotFound from '~/pages/NotFound';
+import appCss from '~/styles/index.scss?url';
 
 const siteUrl = 'https://alexandre-saintprix.com';
 const title = 'Alexandre Saint-Prix | Développeur';
 const description =
     'Alexandre Saint-Prix | Bonjour, je suis développeur front-end JavaScript | Bienvenue sur mon portfolio !';
 const image = `${siteUrl}/alexandre-saint-prix.jpg`;
+
+const loadMotionFeatures = () => import('~/utils/motionFeatures').then((mod) => mod.default);
 
 export const Route = createRootRoute({
     head: () => ({
@@ -45,21 +49,40 @@ export const Route = createRootRoute({
             { rel: 'stylesheet', href: 'https://fonts.bunny.net/css?family=mulish:300,400,600' },
             { rel: 'stylesheet', href: appCss },
         ],
+        // Cloudflare Web Analytics, uniquement en production
+        scripts: import.meta.env.PROD
+            ? [
+                  {
+                      type: 'module',
+                      src: 'https://static.cloudflareinsights.com/beacon.min.js',
+                      'data-cf-beacon': '{"token": "2824bd19f94f48b3a6b60952958c0c6b"}',
+                  },
+              ]
+            : [],
     }),
     shellComponent: RootDocument,
     component: RootLayout,
+    errorComponent: ErrorPage,
     notFoundComponent: NotFound,
 });
 
 function RootDocument({ children }: { children: ReactNode }) {
+    const router = useRouter();
+
     return (
         <html lang="fr">
             <head>
                 <HeadContent />
             </head>
-            <body>
+            {/* Repère du shell SPA (404.html), lu par src/client.tsx */}
+            <body data-spa-shell={router.isShell() ? '' : undefined}>
                 <noscript> Il faut activer JavaScript pour pouvoir naviguer sur le site. </noscript>
-                {children}
+                {/* reducedMotion="user" : coupe les déplacements si prefers-reduced-motion est actif */}
+                <MotionConfig reducedMotion="user">
+                    <LazyMotion features={loadMotionFeatures} strict>
+                        {children}
+                    </LazyMotion>
+                </MotionConfig>
                 <div id="portal"></div>
                 <Scripts />
             </body>

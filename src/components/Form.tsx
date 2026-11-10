@@ -1,6 +1,6 @@
 import * as emailjs from '@emailjs/browser';
 import { useForm } from '@tanstack/react-form';
-import type { Dispatch, SetStateAction } from 'react';
+import { useState, type Dispatch, type SetStateAction } from 'react';
 
 type FormProps = {
     setShowModal: Dispatch<SetStateAction<boolean>>;
@@ -31,6 +31,8 @@ const validate = ({ value }: { value: ContactValues }) => {
 };
 
 const Form = ({ setShowModal }: FormProps) => {
+    const [sendError, setSendError] = useState(false);
+
     const form = useForm({
         defaultValues: {
             from_name: '',
@@ -40,15 +42,20 @@ const Form = ({ setShowModal }: FormProps) => {
         validators: {
             onChange: validate,
         },
-        onSubmit: ({ value }) => {
-            emailjs
-                .send(
+        onSubmit: async ({ value }) => {
+            setSendError(false);
+            try {
+                await emailjs.send(
                     import.meta.env.VITE_SERVICE_ID,
                     import.meta.env.VITE_TEMPLATE_ID,
                     { ...value, to_name: 'Alexandre' }, // my name
                     { publicKey: import.meta.env.VITE_PUBLIC_KEY },
-                )
-                .catch(() => {});
+                );
+            } catch {
+                // On garde la saisie pour permettre un nouvel essai
+                setSendError(true);
+                return;
+            }
             setShowModal(true);
             form.reset();
         },
@@ -132,14 +139,21 @@ const Form = ({ setShowModal }: FormProps) => {
                         );
                     }}
                 </form.Field>
-                <form.Subscribe selector={(state) => state.isValid && state.isDirty}>
-                    {(canSubmit) => (
+                {sendError ? (
+                    <p className="form-content-error" role="alert">
+                        L'envoi a échoué, merci de réessayer dans quelques instants.
+                    </p>
+                ) : null}
+                <form.Subscribe
+                    selector={(state) => [state.isValid && state.isDirty, state.isSubmitting]}
+                >
+                    {([canSubmit, isSubmitting]) => (
                         <button
                             type="submit"
                             className="button button-white button-form form-content-button"
-                            disabled={!canSubmit}
+                            disabled={!canSubmit || isSubmitting}
                         >
-                            Envoyer
+                            {isSubmitting ? 'Envoi…' : 'Envoyer'}
                         </button>
                     )}
                 </form.Subscribe>

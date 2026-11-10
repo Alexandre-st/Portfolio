@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router';
-import github from '../assets/icons/github-mark.svg';
-import linkedIn from '../assets/icons/iconmonstr-linkedin-3.svg';
-import twitter from '../assets/icons/twitter.svg';
+import github from '~/assets/icons/github-mark.svg';
+import linkedIn from '~/assets/icons/iconmonstr-linkedin-3.svg';
+import twitter from '~/assets/icons/twitter.svg';
 
 const Footer = () => {
     return (
@@ -12,13 +12,13 @@ const Footer = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li className="nav-link">
-                        <Link to="/portfolio">Portfolio</Link>
+                        <Link to="/portfolio/">Portfolio</Link>
                     </li>
                     <li className="nav-link">
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact/">Contact</Link>
                     </li>
                     <li className="nav-link">
-                        <Link to="/mentions-legales">Mentions Légales</Link>
+                        <Link to="/mentions-legales/">Mentions Légales</Link>
                     </li>
                 </ul>
 

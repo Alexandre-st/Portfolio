@@ -1,13 +1,13 @@
-import { motion } from 'motion/react';
+import * as m from 'motion/react-m';
 import { Link } from '@tanstack/react-router';
-import Me from '../assets/images/Profil_Picture.jpg';
-import { projects, skills } from '../data/data';
-import { fadeIn } from '../utils/motion';
+import Me from '~/assets/images/Profil_Picture.jpg';
+import { projects, skills } from '~/data/data';
+import { fadeIn } from '~/utils/motion';
 
 const Homepage = () => {
     return (
         <main className="container">
-            <motion.section
+            <m.section
                 className="hero"
                 variants={fadeIn}
                 initial="initial"
@@ -30,8 +30,8 @@ const Homepage = () => {
                     </p>
                     <p className="text">Je travaille à Paris et en remote si besoin.</p>
                 </div>
-            </motion.section>
-            <motion.section
+            </m.section>
+            <m.section
                 className="skills"
                 variants={fadeIn}
                 initial="initial"
@@ -57,8 +57,8 @@ const Homepage = () => {
                         ))}
                     </ul>
                 </div>
-            </motion.section>
-            <motion.section
+            </m.section>
+            <m.section
                 className="work"
                 variants={fadeIn}
                 initial="initial"
@@ -80,10 +80,10 @@ const Homepage = () => {
                             );
                         })}
                 </div>
-                <Link className="button button-white button-work" to="/portfolio">
+                <Link className="button button-white button-work" to="/portfolio/">
                     Un peu plus ...
                 </Link>
-            </motion.section>
+            </m.section>
         </main>
     );
 };
