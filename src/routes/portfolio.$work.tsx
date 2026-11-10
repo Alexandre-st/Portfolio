@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { projects } from '../data/data';
-import NotFound from '../pages/NotFound';
-import Project from '../pages/Project';
+import { projects } from '~/data/data';
+import Project from '~/pages/Project';
+import { pageTitle } from '~/utils/seo';
 
 export const Route = createFileRoute('/portfolio/$work')({
     loader: ({ params }) => {
@@ -11,6 +11,8 @@ export const Route = createFileRoute('/portfolio/$work')({
         }
         return project;
     },
+    head: ({ loaderData }) => ({
+        meta: loaderData ? [{ title: pageTitle(loaderData.title) }] : [],
+    }),
     component: Project,
-    notFoundComponent: NotFound,
 });

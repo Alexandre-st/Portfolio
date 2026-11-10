@@ -1,12 +1,12 @@
-import { motion } from 'motion/react';
+import * as m from 'motion/react-m';
 import type { Dispatch, SetStateAction } from 'react';
 import { Link } from '@tanstack/react-router';
-import github from '../assets/icons/github-mark.svg';
-import closeMenuLogo from '../assets/icons/icon-close.svg';
-import openMenuLogo from '../assets/icons/icon-hamburger.svg';
-import linkedIn from '../assets/icons/iconmonstr-linkedin-3.svg';
-import twitter from '../assets/icons/twitter.svg';
-import { background, fadeInLink, fadeInList } from '../utils/motion';
+import github from '~/assets/icons/github-mark.svg';
+import closeMenuLogo from '~/assets/icons/icon-close.svg';
+import openMenuLogo from '~/assets/icons/icon-hamburger.svg';
+import linkedIn from '~/assets/icons/iconmonstr-linkedin-3.svg';
+import twitter from '~/assets/icons/twitter.svg';
+import { background, fadeInLink, fadeInList } from '~/utils/motion';
 
 type MenuProps = {
     toggleMenu: boolean;
@@ -26,15 +26,15 @@ const Menu = ({ toggleMenu, setToggleMenu }: MenuProps) => {
                 alt="Open the menu"
                 onClick={openMenu}
             />
-            <motion.div
+            <m.div
                 className="header-menu-background"
                 initial="initial"
                 animate={toggleMenu ? 'open' : 'closed'}
                 variants={background}
             >
-                <motion.nav className="header-menu-container container">
-                    <motion.ul className="header-menu-list">
-                        <motion.li
+                <m.nav className="header-menu-container container">
+                    <m.ul className="header-menu-list">
+                        <m.li
                             initial="initial"
                             animate={toggleMenu ? 'show' : 'initial'}
                             variants={fadeInList(0.3)}
@@ -42,43 +42,43 @@ const Menu = ({ toggleMenu, setToggleMenu }: MenuProps) => {
                             <Link to="/" onClick={openMenu} className="header-menu-list-link">
                                 Home
                             </Link>
-                        </motion.li>
-                        <motion.li
+                        </m.li>
+                        <m.li
                             initial="initial"
                             animate={toggleMenu ? 'show' : 'initial'}
                             variants={fadeInList(0.4)}
                         >
                             <Link
-                                to="/portfolio"
+                                to="/portfolio/"
                                 onClick={openMenu}
                                 className="header-menu-list-link"
                             >
                                 Portfolio
                             </Link>
-                        </motion.li>
-                        <motion.li
+                        </m.li>
+                        <m.li
                             initial="initial"
                             animate={toggleMenu ? 'show' : 'initial'}
                             variants={fadeInList(0.5)}
                         >
                             <Link
-                                to="/contact"
+                                to="/contact/"
                                 onClick={openMenu}
                                 className="header-menu-list-link"
                             >
                                 Contact
                             </Link>
-                        </motion.li>
-                    </motion.ul>
-                </motion.nav>
+                        </m.li>
+                    </m.ul>
+                </m.nav>
 
-                <motion.div
+                <m.div
                     className="header-menu-link"
                     initial="initial"
                     animate={toggleMenu ? 'show' : 'initial'}
                     variants={fadeInLink}
                 >
-                    <Link to="/mentions-legales" onClick={openMenu}>
+                    <Link to="/mentions-legales/" onClick={openMenu}>
                         Mentions Légales
                     </Link>
                     <div className="header-menu-link-social">
@@ -104,8 +104,8 @@ const Menu = ({ toggleMenu, setToggleMenu }: MenuProps) => {
                             <img src={linkedIn} alt="Lien pour accéder à mon LinkedIn" />
                         </a>
                     </div>
-                </motion.div>
-            </motion.div>
+                </m.div>
+            </m.div>
         </div>
     );
 };

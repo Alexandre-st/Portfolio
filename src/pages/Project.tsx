@@ -1,6 +1,6 @@
 import { Link, getRouteApi } from '@tanstack/react-router';
-import ArrowLeft from '../assets/icons/Path-left.svg';
-import ArrowRight from '../assets/icons/Path-right.svg';
+import ArrowLeft from '~/assets/icons/Path-left.svg';
+import ArrowRight from '~/assets/icons/Path-right.svg';
 
 const route = getRouteApi('/portfolio/$work');
 
@@ -68,7 +68,7 @@ const Project = () => {
             <section className="project-link">
                 <div className="project-link-left">
                     <img className="project-link-img" src={ArrowLeft} alt="Projet précédent" />
-                    <Link to="/portfolio/$work" params={{ work: project.prevProject }}>
+                    <Link to="/portfolio/$work/" params={{ work: project.prevProject }}>
                         <h4 className="project-link-title link-title">{project.prevProject}</h4>
                         <p className="small-text">Projet Précédent</p>
                     </Link>
@@ -76,7 +76,7 @@ const Project = () => {
                 <div className="border border-rotate" />
                 <div className="project-link-right">
                     <img className="project-link-img" src={ArrowRight} alt="Projet suivant" />
-                    <Link to="/portfolio/$work" params={{ work: project.nextProject }}>
+                    <Link to="/portfolio/$work/" params={{ work: project.nextProject }}>
                         <h4 className="project-link-title link-title">{project.nextProject}</h4>
                         <p className="small-text">Projet Suivant</p>
                     </Link>

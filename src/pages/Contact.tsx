@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import github from '../assets/icons/github-mark.svg';
-import linkedIn from '../assets/icons/iconmonstr-linkedin-3.svg';
-import twitter from '../assets/icons/twitter.svg';
-import Form from '../components/Form';
-import { Modal } from '../components/Modal';
+import github from '~/assets/icons/github-mark.svg';
+import linkedIn from '~/assets/icons/iconmonstr-linkedin-3.svg';
+import twitter from '~/assets/icons/twitter.svg';
+import Form from '~/components/Form';
+import { Modal } from '~/components/Modal';
 
 const Contact = () => {
     const [showModal, setShowModal] = useState(false);

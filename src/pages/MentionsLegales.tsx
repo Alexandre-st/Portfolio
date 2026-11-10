@@ -41,7 +41,7 @@ const MentionsLegales = () => {
                     <p className="text">
                         Un espace interactif (possibilité de poser des questions dans l’espace{' '}
                         <Link
-                            to="/contact"
+                            to="/contact/"
                             className="nav-link"
                             style={{ display: 'inline-block' }}
                         >

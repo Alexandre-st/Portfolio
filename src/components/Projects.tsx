@@ -1,14 +1,14 @@
-import { motion } from 'motion/react';
+import * as m from 'motion/react-m';
 import { Link } from '@tanstack/react-router';
-import { projects } from '../data/data';
-import { fadeIn } from '../utils/motion';
+import { projects } from '~/data/data';
+import { fadeIn } from '~/utils/motion';
 
 const Projects = () => {
     return (
         <section className="projects">
             {projects.map((project) => {
                 return (
-                    <motion.div
+                    <m.div
                         className={project.styleName}
                         key={project.id}
                         variants={fadeIn}
@@ -28,7 +28,7 @@ const Projects = () => {
                                 <p className="text">{project.infos}</p>
                                 <Link
                                     className="button button-white"
-                                    to="/portfolio/$work"
+                                    to="/portfolio/$work/"
                                     params={{ work: project.linkName }}
                                 >
                                     VOIR LE PROJET
@@ -36,7 +36,7 @@ const Projects = () => {
                             </div>
                             <div className="border" />
                         </div>
-                    </motion.div>
+                    </m.div>
                 );
             })}
         </section>
