@@ -11,6 +11,7 @@ import type { ReactNode } from 'react';
 import Footer from '~/layouts/Footer';
 import Header from '~/layouts/Header';
 import ErrorPage from '~/pages/ErrorPage';
+import { ThemeProvider, ThemeScript } from '~/providers/ThemeProvider';
 import NotFound from '~/pages/NotFound';
 import appCss from '~/styles/index.scss?url';
 
@@ -78,17 +79,16 @@ function RootDocument({ children }: { children: ReactNode }) {
     const router = useRouter();
 
     return (
-        <html lang="fr">
+        <html lang="fr" suppressHydrationWarning>
             <head>
+                <ThemeScript />
                 <HeadContent />
             </head>
-            {/* Repère du shell SPA (404.html), lu par RootLayout pendant l'hydratation */}
             <body data-spa-shell={router.isShell() ? '' : undefined}>
                 <noscript> Il faut activer JavaScript pour pouvoir naviguer sur le site. </noscript>
-                {/* reducedMotion="user" : coupe les déplacements si prefers-reduced-motion est actif */}
                 <MotionConfig reducedMotion="user">
                     <LazyMotion features={loadMotionFeatures} strict>
-                        {children}
+                        <ThemeProvider>{children}</ThemeProvider>
                     </LazyMotion>
                 </MotionConfig>
                 <div id="portal"></div>
@@ -102,9 +102,6 @@ function RootLayout() {
     const router = useRouter();
     const hydrated = useHydrated();
 
-    // Le shell SPA n'est servi que comme 404.html : il contient déjà la page introuvable.
-    // Côté client, on rend la même chose pendant l'hydratation pour que le HTML corresponde,
-    // puis le router prend le relais (route inconnue ou projet inexistant).
     const isShell =
         router.isShell() ||
         (!hydrated &&

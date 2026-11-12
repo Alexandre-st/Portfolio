@@ -1,6 +1,7 @@
 // == BASE == //
-@use "./base/base";
-@use "./base/reset";
+@use "./common/tokens";
+@use "./common/common";
+@use "./common/reset";
 
 // == LAYOUTS == //
 @use "./layouts/header";
@@ -19,3 +20,4 @@
 @use "./components/contactForm";
 @use "./components/projects";
 @use "./components/modal";
+@use "./components/themeToggle";

@@ -1,19 +1,19 @@
 @use "./breakpoints" as *;
 @use "./mixins" as *;
+@use "../function/function" as *;
 
 :root {
-  font-size: 10px;
   font-family: "Mulish", sans-serif;
-  background-color: #fff;
-  color: #262626;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 .container {
-  width: min(100% - 4rem, 111rem);
+  width: min(100% - px-to-rem(40), px-to-rem(1110));
   margin-inline: auto;
 
   @media (width >= $bp-tablet) {
-    width: min(100% - 6rem, 111rem);
+    width: min(100% - px-to-rem(60), px-to-rem(1110));
   }
 }
 
@@ -28,53 +28,53 @@
 }
 
 .little-title {
-  font-size: 3.2rem;
-  line-height: 3.6rem;
+  font-size: px-to-rem(32);
+  line-height: px-to-rem(36);
   font-weight: 400;
   letter-spacing: -0.285714px;
 }
 
 .link-title {
-  font-size: 2.6rem;
-  line-height: 3.2rem;
+  font-size: px-to-rem(26);
+  line-height: px-to-rem(32);
   font-weight: 400;
   letter-spacing: -0.285714px;
 
   @media (width >= $bp-tablet) {
-    font-size: 3.2rem;
-    line-height: 3.6rem;
+    font-size: px-to-rem(32);
+    line-height: px-to-rem(36);
   }
 }
 
 .text {
   font-weight: 300;
-  font-size: 1.6rem;
-  line-height: 3rem;
+  font-size: px-to-rem(16);
+  line-height: px-to-rem(30);
   opacity: 0.9;
 }
 
 .small-text {
-  font-size: 1.2rem;
-  line-height: 2.6rem;
+  font-size: px-to-rem(12);
+  line-height: px-to-rem(26);
 }
 
 .button {
-  font-size: 1.2rem;
-  line-height: 1.4rem;
+  font-size: px-to-rem(12);
+  line-height: px-to-rem(14);
   letter-spacing: 2px;
 
   &-white {
-    width: 20.2rem;
+    width: px-to-rem(202);
     @include button;
   }
 
   &-link {
-    width: 12rem;
+    width: px-to-rem(120);
   }
 
   &-work {
     margin-left: auto;
-    margin-top: 4rem;
+    margin-top: px-to-rem(40);
   }
 
   &-form {

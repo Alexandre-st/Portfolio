@@ -1,13 +1,14 @@
-@use "../base/breakpoints" as *;
-@use "../base/mixins" as *;
+@use "../common/breakpoints" as *;
+@use "../common/mixins" as *;
+@use "../function/function" as *;
 
 .not-found {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: px-to-rem(40);
   min-height: 60vh;
-  padding-block: 4rem;
+  padding-block: px-to-rem(40);
 
   @media (width >= $bp-laptop) {
     flex-direction: row;
@@ -17,8 +18,8 @@
   &-content {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
-    max-width: 54rem;
+    gap: px-to-rem(24);
+    max-width: px-to-rem(540);
   }
 
   &-eyebrow {
@@ -29,23 +30,23 @@
 
   &-tiles {
     display: flex;
-    gap: 1.2rem;
+    gap: px-to-rem(12);
   }
 
   &-tile {
     display: grid;
     place-items: center;
-    width: 8rem;
-    height: 8rem;
+    width: px-to-rem(80);
+    height: px-to-rem(80);
     border: 1px solid #262626;
-    font-size: 4rem;
+    font-size: px-to-rem(40);
     font-weight: 600;
     color: #262626;
 
     @media (width >= $bp-tablet) {
-      width: 10rem;
-      height: 10rem;
-      font-size: 5rem;
+      width: px-to-rem(100);
+      height: px-to-rem(100);
+      font-size: px-to-rem(50);
     }
 
     &-dark {
@@ -57,20 +58,20 @@
   &-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.6rem;
-    margin-top: 1.6rem;
+    gap: px-to-rem(16);
+    margin-top: px-to-rem(16);
 
     .button-white {
       width: 100%;
 
       @media (width >= $bp-tablet) {
-        width: 16rem;
+        width: px-to-rem(160);
       }
     }
   }
 
   &-img {
-    width: min(100%, 40rem);
+    width: min(100%, px-to-rem(400));
   }
 }
 
@@ -79,14 +80,14 @@
    Transform + opacity uniquement, désactivé sous prefers-reduced-motion. */
 @keyframes not-found-drop-in {
   from {
-    transform: translateY(-1.6rem) scale(0.94);
+    transform: translateY(px-to-rem(-16)) scale(0.94);
     opacity: 0;
   }
 }
 
 @keyframes not-found-rise-in {
   from {
-    transform: translateY(1rem);
+    transform: translateY(px-to-rem(10));
     opacity: 0;
   }
 }

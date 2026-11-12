@@ -1,0 +1,29 @@
+@use "../common/breakpoints" as *;
+@use "../function/function" as *;
+
+.theme-toggle {
+  // Reste cliquable au-dessus du fond du menu mobile ouvert
+  position: relative;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: px-to-rem(44);
+  height: px-to-rem(44);
+  margin-left: auto;
+  margin-right: px-to-rem(12);
+
+  @media (width >= $bp-tablet) {
+    margin-left: px-to-rem(32);
+    margin-right: 0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  &__icon {
+    width: px-to-rem(22);
+    height: px-to-rem(22);
+  }
+}

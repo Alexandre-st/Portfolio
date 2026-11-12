@@ -1,0 +1,62 @@
+// === TOKENS === //
+// Miroir des variables de pen/portfolio.pen : même nom, préfixé par sa catégorie.
+// Le thème est piloté par l'attribut data-theme posé sur <html> (voir ThemeProvider) :
+// light par défaut, dark forcé, ou system qui suit prefers-color-scheme.
+
+@mixin theme-light {
+  --color-bg: #fbfaf8;
+  --color-bg-elev: #f3f1ec;
+  --color-surface: #e8e5de;
+  --color-border: #e2ded6;
+  --color-border-strong: #cdc7bc;
+  --color-border-interactive: #86827b;
+  --color-text: #131311;
+  --color-text-2: #49494f;
+  --color-text-3: #46464b;
+  --color-accent: #c0320c;
+  --color-accent-text: #8c2509;
+  --color-accent-dim: #ff4f2622;
+  --color-accent-0: #c0320c00;
+  --color-lime: #4c7a0b;
+  --color-scrim: #fbfaf8d9;
+
+  --glow-opacity: 0.3;
+}
+
+@mixin theme-dark {
+  --color-bg: #09090a;
+  --color-bg-elev: #101012;
+  --color-surface: #16161a;
+  --color-border: #232328;
+  --color-border-strong: #33333a;
+  --color-border-interactive: #62626f;
+  --color-text: #f4f2ef;
+  --color-text-2: #a7a7b1;
+  --color-text-3: #a1a1aa;
+  --color-accent: #ff4f26;
+  --color-accent-text: #ff7b5c;
+  --color-accent-0: #ff4f2600;
+  --color-lime: #c8f65d;
+  --color-scrim: #09090acc;
+
+  --glow-opacity: 0.5;
+}
+
+:root {
+  @include theme-light;
+
+  // Polices
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root[data-theme="dark"] {
+  @include theme-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"] {
+    @include theme-dark;
+  }
+}

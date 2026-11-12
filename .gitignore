@@ -28,3 +28,6 @@ portfolio-v1
 .output
 .tanstack
 .netlify
+
+# Pencil (copies des images de src/assets)
+pen/pen-assets

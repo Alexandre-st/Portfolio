@@ -1,35 +1,36 @@
 @use "./breakpoints" as *;
+@use "../function/function" as *;
 
 @mixin big-title {
-  font-size: 2.5rem;
-  line-height: 3.5rem;
+  font-size: px-to-rem(25);
+  line-height: px-to-rem(35);
   letter-spacing: -0.357143px;
 
   @media (width >= $bp-tablet) {
-    font-size: 4rem;
-    line-height: 5.5rem;
+    font-size: px-to-rem(40);
+    line-height: px-to-rem(55);
   }
 
   @media (width >= $bp-laptop) {
-    font-size: 4.5rem;
-    line-height: 6.5rem;
+    font-size: px-to-rem(45);
+    line-height: px-to-rem(65);
   }
 }
 
 @mixin mid-title {
-  font-size: 2.5rem;
-  line-height: 3.5rem;
+  font-size: px-to-rem(25);
+  line-height: px-to-rem(35);
   letter-spacing: -0.357143px;
 
   @media (width >= $bp-tablet) {
-    font-size: 4rem;
-    line-height: 5.5rem;
+    font-size: px-to-rem(40);
+    line-height: px-to-rem(55);
   }
 }
 
 @mixin text-form {
   width: 100%;
-  font-size: 1.3rem;
+  font-size: px-to-rem(13);
   background-color: #ebebec;
 
   &::placeholder {
@@ -41,7 +42,7 @@
 @mixin button {
   border: 1px solid #262626;
   padding: 17px 0 17px 0;
-  height: 4.8rem;
+  height: px-to-rem(48);
   text-align: center;
   color: #33323d;
   text-transform: uppercase;
@@ -56,7 +57,7 @@
 @mixin link-button {
   border: 1px solid #262626;
   padding: 12px 0 12px 0;
-  height: 3.8rem;
+  height: px-to-rem(38);
   text-align: center;
   color: #33323d;
   text-transform: uppercase;
@@ -69,21 +70,21 @@
 }
 
 @mixin section-margin {
-  margin-top: 10rem;
+  margin-top: px-to-rem(100);
 
   @media (width >= $bp-laptop) {
-    margin-top: 16rem;
+    margin-top: px-to-rem(160);
   }
 }
 
 @mixin content-margin {
-  margin-bottom: 3.2rem;
+  margin-bottom: px-to-rem(32);
 
   @media (width >= $bp-laptop) {
-    margin-bottom: 3.5rem;
+    margin-bottom: px-to-rem(35);
   }
 
   @media (width >= $bp-desktop) {
-    margin-bottom: 5.5rem;
+    margin-bottom: px-to-rem(55);
   }
 }

@@ -1,19 +1,20 @@
-@use "../base/breakpoints" as *;
-@use "../base/mixins" as *;
+@use "../common/breakpoints" as *;
+@use "../common/mixins" as *;
+@use "../function/function" as *;
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3.2rem 0 4rem 0;
+  padding: px-to-rem(32) 0 px-to-rem(40) 0;
   position: relative;
 
   @media (width >= $bp-tablet) {
-    padding: 6.4rem 0 4.7rem 0;
+    padding: px-to-rem(64) 0 px-to-rem(47) 0;
   }
 
   @media (width >= $bp-laptop) {
-    padding: 6.4rem 0 5.4rem 0;
+    padding: px-to-rem(64) 0 px-to-rem(54) 0;
   }
 
   // When the menu is open this class going to be active
@@ -24,7 +25,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3.2rem 2rem 4rem 2rem;
+    padding: px-to-rem(32) px-to-rem(20) px-to-rem(40) px-to-rem(20);
     z-index: 12;
   }
 
@@ -33,8 +34,8 @@
     z-index: 6;
 
     &-logo {
-      width: 5rem;
-      height: 5rem;
+      width: px-to-rem(50);
+      height: px-to-rem(50);
     }
   }
 
@@ -43,19 +44,20 @@
 
     @media (width >= $bp-tablet) {
       display: block;
+      margin-left: auto;
     }
 
     &-list {
       display: flex;
-      gap: 4.2rem;
+      gap: px-to-rem(42);
     }
   }
 }
 
 .nav-link {
   position: relative;
-  font-size: 1.4rem;
-  letter-spacing: 0.2rem;
+  font-size: px-to-rem(14);
+  letter-spacing: px-to-rem(2);
 
   a.active {
     &:before {
@@ -64,7 +66,7 @@
       bottom: -6px;
       left: 50%;
       transform: translate(-50%);
-      width: 2.4rem;
+      width: px-to-rem(24);
       border-bottom: 1px solid #363636;
     }
   }

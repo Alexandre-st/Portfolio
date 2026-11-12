@@ -1,8 +1,10 @@
+@use "../function/function" as *;
+
 .mentions {
-  margin: 5rem 0;
+  margin: px-to-rem(50) 0;
 
   &-container {
-    margin-top: 3.5rem;
+    margin-top: px-to-rem(35);
 
     b {
       font-weight: 700;

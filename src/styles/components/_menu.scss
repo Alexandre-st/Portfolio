@@ -1,5 +1,6 @@
-@use "../base/breakpoints" as *;
-@use "../base/mixins" as *;
+@use "../common/breakpoints" as *;
+@use "../common/mixins" as *;
+@use "../function/function" as *;
 
 .header-menu {
   @media (width >= $bp-tablet) {
@@ -23,8 +24,8 @@
 
   &-container {
     position: relative;
-    line-height: 11rem;
-    top: 16rem;
+    line-height: px-to-rem(110);
+    top: px-to-rem(160);
   }
 
   &-list {
@@ -48,24 +49,24 @@
   // For the social link and the "mentions-légales"
   &-link {
     position: absolute;
-    bottom: 4rem;
-    padding: 0 2rem;
+    bottom: px-to-rem(40);
+    padding: 0 px-to-rem(20);
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     a {
-      font-size: 1.4rem;
-      letter-spacing: 0.2rem;
+      font-size: px-to-rem(14);
+      letter-spacing: px-to-rem(2);
     }
 
     &-social {
       display: flex;
-      gap: 3rem;
+      gap: px-to-rem(30);
 
       img {
-        height: 2.5rem;
+        height: px-to-rem(25);
       }
 
       :hover {

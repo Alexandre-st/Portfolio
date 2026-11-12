@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import Menu from '~/components/Menu';
+import ThemeToggle from '~/components/ThemeToggle';
 import { NAV_LINKS } from '~/constants/navLinks';
 
 const Header = () => {
@@ -37,6 +38,7 @@ const Header = () => {
                         ))}
                     </ul>
                 </nav>
+                <ThemeToggle />
                 <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
             </div>
         </header>

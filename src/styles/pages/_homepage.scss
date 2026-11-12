@@ -1,17 +1,18 @@
 // https://github-contributions.vercel.app/
-@use "../base/breakpoints" as *;
-@use "../base/mixins" as *;
+@use "../common/breakpoints" as *;
+@use "../common/mixins" as *;
+@use "../function/function" as *;
 
 .hero {
   @media (width >= $bp-tablet) {
     display: flex;
-    gap: 5rem;
+    gap: px-to-rem(50);
     align-items: center;
     flex: 1;
   }
 
   @media (width >= $bp-desktop) {
-    gap: 6rem;
+    gap: px-to-rem(60);
     justify-content: space-between;
   }
 
@@ -26,7 +27,7 @@
   }
 
   &-text {
-    margin-top: 6rem;
+    margin-top: px-to-rem(60);
 
     @media (width >= $bp-tablet) {
       margin-top: 0;
@@ -62,7 +63,7 @@
   @media (width >= $bp-tablet) {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: px-to-rem(50);
   }
 
   &-text {
@@ -76,26 +77,26 @@
   }
 
   &-content {
-    margin-top: 4rem;
+    margin-top: px-to-rem(40);
 
     @media (width >= $bp-tablet) {
       flex: 1;
     }
 
     @media (width >= $bp-laptop) {
-      margin-top: 6rem;
+      margin-top: px-to-rem(60);
     }
 
     &-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 1.4rem;
-      line-height: 2rem;
+      gap: px-to-rem(10);
+      font-size: px-to-rem(14);
+      line-height: px-to-rem(20);
 
       &-li {
         background-color: #f1f2f6;
-        padding: 0.5rem 1rem;
+        padding: px-to-rem(5) px-to-rem(10);
         border-radius: 5px;
 
         &:hover {
@@ -119,25 +120,25 @@
   &-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: px-to-rem(40);
     overflow: hidden;
 
     @media (width >= $bp-laptop) {
-      gap: 2rem;
+      gap: px-to-rem(20);
 
       :nth-child(2) {
-        margin-top: 6rem;
+        margin-top: px-to-rem(60);
       }
 
       :nth-child(3) {
-        margin-top: 12rem;
+        margin-top: px-to-rem(120);
       }
     }
 
     &-element {
-      flex: 1 0 30rem;
+      flex: 1 0 px-to-rem(300);
       img {
-        border-radius: 1rem;
+        border-radius: px-to-rem(10);
       }
     }
   }

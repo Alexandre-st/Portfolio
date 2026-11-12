@@ -1,32 +1,33 @@
-@use "../base/breakpoints" as *;
-@use "../base/mixins" as *;
+@use "../common/breakpoints" as *;
+@use "../common/mixins" as *;
+@use "../function/function" as *;
 
 .footer {
   background-color: #f1f2f6;
-  margin-top: 5.6rem;
+  margin-top: px-to-rem(56);
 
   @media (width >= $bp-tablet) {
-    margin-top: 12rem;
+    margin-top: px-to-rem(120);
   }
 
   h4 {
-    margin-bottom: 4rem;
+    margin-bottom: px-to-rem(40);
   }
 
   &-container {
-    padding: 8rem 0;
+    padding: px-to-rem(80) 0;
     display: flex;
     justify-content: space-between;
 
     @media (width >= $bp-tablet) {
-      padding: 4rem 0;
+      padding: px-to-rem(40) 0;
     }
   }
 
   &-content-list {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: px-to-rem(30);
     text-transform: uppercase;
 
     @media (width >= $bp-tablet) {
@@ -34,17 +35,17 @@
     }
 
     @media (width >= $bp-laptop) {
-      gap: 4.2rem;
+      gap: px-to-rem(42);
     }
   }
 
   &-social {
     display: flex;
-    gap: 3rem;
+    gap: px-to-rem(30);
     height: fit-content;
 
     img {
-      height: 2.5rem;
+      height: px-to-rem(25);
     }
 
     :hover {
