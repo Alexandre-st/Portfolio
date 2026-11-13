@@ -8,5 +8,6 @@ export function getRouter() {
         // Netlify sert les pages pré-rendues en dossier/index.html : une seule URL par page
         trailingSlash: 'always',
         defaultPreload: 'intent',
+        defaultViewTransition: true,
     });
 }

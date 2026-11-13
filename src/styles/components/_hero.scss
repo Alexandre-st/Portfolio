@@ -1,0 +1,124 @@
+@use "../common/breakpoints" as *;
+@use "../function/function" as *;
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  // Le halo déborde derrière le header, mais jamais sur les côtés
+  overflow-x: clip;
+  padding-block: fluid(40, 72) fluid(56, 88);
+
+  &__glow {
+    position: absolute;
+    z-index: -1;
+    top: fluid(-140, -220);
+    left: fluid(-120, -240);
+    width: fluid(560, 1200);
+    height: fluid(420, 820);
+    border-radius: 50%;
+    background: radial-gradient(
+      closest-side,
+      var(--color-accent),
+      var(--color-accent-0)
+    );
+    opacity: var(--glow-opacity);
+    filter: blur(fluid(30, 40));
+    pointer-events: none;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(30, 56);
+  }
+
+  &__scroll {
+    display: none;
+    align-self: flex-end;
+    color: var(--color-text-3);
+
+    @media (width >= $bp-tablet) {
+      display: block;
+    }
+  }
+
+  &__line {
+    display: block;
+
+    &--muted {
+      color: var(--color-text-2);
+    }
+  }
+
+  &__accent {
+    color: var(--color-accent);
+  }
+
+  &__nowrap {
+    white-space: nowrap;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(30);
+
+    @media (width >= $bp-laptop) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: px-to-rem(64);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(10);
+
+    @media (width >= $bp-tablet) {
+      flex-direction: row;
+      gap: px-to-rem(12);
+    }
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: px-to-rem(18);
+    border-top: 1px solid var(--color-border);
+
+    @media (width >= $bp-laptop) {
+      display: flex;
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(6);
+    color: var(--color-text-3);
+
+    & + & {
+      padding-left: px-to-rem(16);
+      border-left: 1px solid var(--color-border);
+    }
+
+    @media (width >= $bp-laptop) {
+      gap: px-to-rem(8);
+      padding-inline: px-to-rem(28);
+      border-left: 1px solid var(--color-border);
+
+      & + & {
+        padding-left: px-to-rem(28);
+      }
+    }
+  }
+
+  &__stat-value {
+    color: var(--color-text);
+    font-size: fluid(19, 24);
+  }
+}

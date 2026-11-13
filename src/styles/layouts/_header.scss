@@ -1,80 +1,22 @@
 @use "../common/breakpoints" as *;
-@use "../common/mixins" as *;
 @use "../function/function" as *;
 
 .header {
+  // Au-dessus du halo du hero
+  position: relative;
+  z-index: 1;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: px-to-rem(32) 0 px-to-rem(40) 0;
-  position: relative;
-
-  @media (width >= $bp-tablet) {
-    padding: px-to-rem(64) 0 px-to-rem(47) 0;
-  }
-
-  @media (width >= $bp-laptop) {
-    padding: px-to-rem(64) 0 px-to-rem(54) 0;
-  }
-
-  // When the menu is open this class going to be active
-  &-open {
-    position: fixed;
-    right: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: px-to-rem(32) px-to-rem(20) px-to-rem(40) px-to-rem(20);
-    z-index: 12;
-  }
-
-  &-img {
-    position: relative;
-    z-index: 6;
-
-    &-logo {
-      width: px-to-rem(50);
-      height: px-to-rem(50);
-    }
-  }
-
-  &-nav {
-    display: none;
-
-    @media (width >= $bp-tablet) {
-      display: block;
-      margin-left: auto;
-    }
-
-    &-list {
-      display: flex;
-      gap: px-to-rem(42);
-    }
-  }
+  gap: px-to-rem(12);
+  padding-block: fluid(14, 26);
+  // Hors du fondu de page : le fond de la nav doit glisser à vue pendant la transition
+  view-transition-name: site-header;
 }
 
-.nav-link {
-  position: relative;
-  font-size: px-to-rem(14);
-  letter-spacing: px-to-rem(2);
-
-  a.active {
-    &:before {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 50%;
-      transform: translate(-50%);
-      width: px-to-rem(24);
-      border-bottom: 1px solid #363636;
-    }
-  }
-
-  &:hover {
-    color: #1b1d23;
-    font-weight: 900;
-  }
+::view-transition-old(site-header) {
+  display: none;
 }
 
-// logo minimalist writing "AS" with white background, digital style
+::view-transition-new(site-header) {
+  animation: none;
+}

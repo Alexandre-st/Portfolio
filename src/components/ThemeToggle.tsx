@@ -31,11 +31,7 @@ const ThemeToggle = () => {
             onClick={() => setPreference(next)}
             aria-label={`Thème ${THEME_LABELS[preference]}, passer au thème ${THEME_LABELS[next]}`}
         >
-            <HugeiconsIcon
-                className="theme-toggle__icon"
-                icon={THEME_ICONS[preference]}
-                aria-hidden="true"
-            />
+            <HugeiconsIcon icon={THEME_ICONS[preference]} aria-hidden="true" />
         </button>
     );
 };

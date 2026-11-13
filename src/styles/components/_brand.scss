@@ -1,0 +1,29 @@
+@use "../function/function" as *;
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: px-to-rem(14);
+  color: var(--color-text);
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  &__name {
+    font-size: px-to-rem(14);
+    font-weight: 500;
+    letter-spacing: -0.014em;
+  }
+
+  &__role {
+    color: var(--color-text-3);
+  }
+}

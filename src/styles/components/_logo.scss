@@ -1,0 +1,71 @@
+@use "../function/function" as *;
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: px-to-rem(37);
+  height: auto;
+  overflow: visible;
+
+  &__letter {
+    fill: var(--color-text);
+
+    &--accent {
+      fill: var(--color-accent);
+    }
+  }
+
+  &__stroke {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    // Espace > longueur du tracé : aucun point d'extrémité visible avant le passage du trait
+    stroke-dasharray: 1 2;
+    stroke-dashoffset: 1;
+    opacity: 0;
+    animation-name: logo-write;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  // Révèle les bords des glyphes que les tracés ne couvrent pas
+  &__reveal {
+    fill: #fff;
+    opacity: 0;
+    animation: logo-reveal 0.2s ease-out forwards;
+  }
+}
+
+@keyframes logo-write {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes logo-reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo--animated {
+    .logo__stroke {
+      animation: none;
+      opacity: 1;
+      stroke-dashoffset: 0;
+    }
+
+    .logo__reveal {
+      animation: none;
+      opacity: 1;
+    }
+  }
+}

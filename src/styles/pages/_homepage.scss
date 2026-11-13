@@ -3,7 +3,7 @@
 @use "../common/mixins" as *;
 @use "../function/function" as *;
 
-.hero {
+.intro {
   @media (width >= $bp-tablet) {
     display: flex;
     gap: px-to-rem(50);

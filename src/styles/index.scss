@@ -18,8 +18,13 @@
 @use "./pages/mentionsLegales";
 
 // == COMPONENTS == //
-@use "./components/menu";
 @use "./components/contactForm";
 @use "./components/projects";
 @use "./components/modal";
 @use "./components/themeToggle";
+@use "./components/logo";
+@use "./components/brand";
+@use "./components/nav";
+@use "./components/mobileMenu";
+@use "./components/button";
+@use "./components/hero";
