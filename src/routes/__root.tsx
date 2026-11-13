@@ -1,11 +1,4 @@
-import {
-    HeadContent,
-    Outlet,
-    Scripts,
-    createRootRoute,
-    useHydrated,
-    useRouter,
-} from '@tanstack/react-router';
+import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router';
 import { LazyMotion, MotionConfig } from 'motion/react';
 import type { ReactNode } from 'react';
 import Footer from '~/layouts/Footer';
@@ -54,8 +47,6 @@ export const Route = createRootRoute({
             { rel: 'icon', href: '/logo.jpg', type: 'image/jpeg' },
             { rel: 'apple-touch-icon', href: '/logo.jpg' },
             { rel: 'canonical', href: siteUrl },
-            { rel: 'preconnect', href: 'https://fonts.bunny.net' },
-            { rel: 'stylesheet', href: 'https://fonts.bunny.net/css?family=mulish:300,400,600' },
             { rel: 'stylesheet', href: appCss },
         ],
         // Cloudflare Web Analytics, uniquement en production
@@ -76,15 +67,13 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: ReactNode }) {
-    const router = useRouter();
-
     return (
         <html lang="fr" suppressHydrationWarning>
             <head>
                 <ThemeScript />
                 <HeadContent />
             </head>
-            <body data-spa-shell={router.isShell() ? '' : undefined}>
+            <body>
                 <noscript> Il faut activer JavaScript pour pouvoir naviguer sur le site. </noscript>
                 <MotionConfig reducedMotion="user">
                     <LazyMotion features={loadMotionFeatures} strict>
@@ -99,19 +88,10 @@ function RootDocument({ children }: { children: ReactNode }) {
 }
 
 function RootLayout() {
-    const router = useRouter();
-    const hydrated = useHydrated();
-
-    const isShell =
-        router.isShell() ||
-        (!hydrated &&
-            typeof document !== 'undefined' &&
-            document.body.hasAttribute('data-spa-shell'));
-
     return (
         <>
             <Header />
-            {isShell ? <NotFound /> : <Outlet />}
+            <Outlet />
             <Footer />
         </>
     );

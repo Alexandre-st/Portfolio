@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as R404RouteImport } from './routes/404'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
@@ -18,6 +19,11 @@ import { Route as PortfolioWorkRouteImport } from './routes/portfolio.$work'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R404Route = R404RouteImport.update({
+  id: '/404',
+  path: '/404',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -43,6 +49,7 @@ const PortfolioWorkRoute = PortfolioWorkRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/contact': typeof ContactRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/portfolio/$work': typeof PortfolioWorkRoute
@@ -50,6 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/contact': typeof ContactRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/portfolio/$work': typeof PortfolioWorkRoute
@@ -58,6 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/404': typeof R404Route
   '/contact': typeof ContactRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/portfolio/$work': typeof PortfolioWorkRoute
@@ -66,12 +75,24 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/contact' | '/mentions-legales' | '/portfolio/$work' | '/portfolio/'
+    | '/'
+    | '/404'
+    | '/contact'
+    | '/mentions-legales'
+    | '/portfolio/$work'
+    | '/portfolio/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/mentions-legales' | '/portfolio/$work' | '/portfolio'
+  to:
+    | '/'
+    | '/404'
+    | '/contact'
+    | '/mentions-legales'
+    | '/portfolio/$work'
+    | '/portfolio'
   id:
     | '__root__'
     | '/'
+    | '/404'
     | '/contact'
     | '/mentions-legales'
     | '/portfolio/$work'
@@ -80,6 +101,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R404Route: typeof R404Route
   ContactRoute: typeof ContactRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PortfolioWorkRoute: typeof PortfolioWorkRoute
@@ -93,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/404': {
+      id: '/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof R404RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -128,6 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R404Route: R404Route,
   ContactRoute: ContactRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   PortfolioWorkRoute: PortfolioWorkRoute,

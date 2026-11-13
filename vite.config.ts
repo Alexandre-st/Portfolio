@@ -21,15 +21,8 @@ export default defineConfig({
                 // chemins sans slash découverts dans l'arbre des routes pour éviter les doublons
                 filter: (page) => page.path.split('?')[0]!.endsWith('/'),
             },
-            // Le shell SPA est écrit dans /404.html, que Netlify sert automatiquement (statut 404)
-            // pour les URL inconnues. Le router résout ensuite l'URL côté client et affiche le
-            // notFoundComponent de la route racine.
-            spa: {
-                enabled: true,
-                // Query string pour que le shell ne soit pas confondu avec la page d'accueil
-                maskPath: '/?shell',
-                prerender: { outputPath: '/404' },
-            },
+            // Netlify sert /404.html (statut 404) pour les URL inconnues
+            pages: [{ path: '/404/', prerender: { outputPath: '/404.html' } }],
         }),
         viteReact(),
     ],

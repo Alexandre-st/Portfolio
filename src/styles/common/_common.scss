@@ -3,7 +3,7 @@
 @use "../function/function" as *;
 
 :root {
-  font-family: "Mulish", sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--color-bg);
   color: var(--color-text);
 }

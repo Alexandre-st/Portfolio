@@ -11,7 +11,7 @@
 
 | Zone | Code actuel | Maquette |
 |---|---|---|
-| **Identité visuelle** | Mulish, fond blanc, texte `#262626`, pas de couleurs centralisées | 3 polices (Instrument Serif, Inter Tight, JetBrains Mono), couleurs centralisées dans des variables, accent orange `#FF4F26`, thèmes **sombre + clair** |
+| **Identité visuelle** | Mulish, fond blanc, texte `#262626`, pas de couleurs centralisées | 2 polices (Instrument Serif pour les titres, Inter Tight pour le corps ; JetBrains Mono retirée), couleurs centralisées dans des variables, accent orange `#FF4F26`, thèmes **sombre + clair** |
 | **Logo** | `logo.jpg` | Monogramme « AS » en texte, avec nom et rôle à côté |
 | **Header** | 3 liens, menu burger animé | 3 liens + pastille « Disponible en freelance » |
 | **Accueil** | Photo + titre, nuage de 27 compétences, 3 images de projets, bouton « Un peu plus… » | Grand titre (« Je construis des *interfaces* front-end… »), chiffres clés (3 ans / 12+ / Paris), bandeau de technos, 2 cartes de projets + 4 lignes, section « À propos » avec photo et compétences classées en 4 groupes, bloc final avec mail et **CV** |
@@ -25,7 +25,7 @@
 
 ## 2. Les plus
 
-- **Le design paraît pro et actuel.** Le mélange serif / sans-serif / mono et les titres numérotés font « développeur qui soigne son travail ». C'est un argument en soi pour un poste front.
+- **Le design paraît pro et actuel.** Le contraste serif / sans-serif et les titres numérotés font « développeur qui soigne son travail ». C'est un argument en soi pour un poste front.
 - **La page projet devient une étude de cas.** C'est **le plus gros gain pour un CDI** : un recruteur ou un lead tech veut savoir *comment tu réfléchis* (contraintes, découpage, choix). La version actuelle ne montre que des images.
 - **L'accessibilité est spécifiée dans la maquette**, avec les WCAG citées et des contrastes mesurés. C'est rare et différenciant. À garder et à valoriser en entretien.
 - **Les compétences sont classées en 4 groupes** au lieu d'une liste en vrac où « css », « scss » et « sass » apparaissent séparément.
@@ -46,7 +46,7 @@
 
 ### Technique
 
-- **3 polices web au lieu d'1**, donc plus lourd à charger. Limiter les graisses et utiliser `font-display: swap`.
+- **2 polices web au lieu d'1** (la maquette en prévoyait 3, JetBrains Mono a été retirée). Limiter les graisses et utiliser `font-display: swap`.
 - **Pas de bouton pour changer de thème.** Le thème suivra donc la préférence du système (`prefers-color-scheme`). C'est très bien, mais à décider explicitement.
 - **Les filtres et le tri** sont beaucoup de logique pour 7 à 9 projets. C'est discutable : ça rend surtout visible le petit nombre de projets par catégorie (02, 03…).
 - **Le modèle de données devra être refondu** (`Project` dans `src/data/data.ts`) : ajouter catégorie, année, durée, rôle, étapes, citation et légendes, et retirer `styleName` et `color`.
@@ -95,6 +95,8 @@ Tout ce qui est orienté client est à réécrire :
 - **Variables de thème en variables CSS** (`src/styles/common/_tokens.scss`), car elles changent à l'exécution sans dupliquer de règles. **Breakpoints et mixins restent en SCSS**, car les variables CSS ne fonctionnent pas dans `@media`.
 - **Nommage des variables** : nom du `.pen` + préfixe de catégorie (`--color-bg`, `--color-text-2`, `--font-display`…). Correspondance 1:1 avec la maquette.
 - **Classes en BEM strict** : `bloc__element--variante`. À appliquer au fil de la refonte de chaque page (les classes actuelles n'ont pas été renommées).
+- **Polices** : 2 au lieu de 3. Instrument Serif (`--font-display`) pour les titres et accents, Inter Tight (`--font-sans`) pour le corps. Les libellés prévus en JetBrains Mono (10–12 px, majuscules) passent en Inter Tight majuscules avec le même espacement de lettres et `tabular-nums`. Dans le `.pen`, la variable `font-mono` reste à remplacer.
+- **Typographie** : classes par rôle dans `src/styles/common/_typography.scss` (`.text-display`, `.text-page-title`, `.text-section-title`, `.text-subtitle`, `.text-card-title`, `.text-item-title`, `.text-accent`, `.text-quote`, `.text-lead`, `.text-body`, `.text-body-sm`, `.text-caption`, `.text-label`). Tailles fluides entre 390 et 1440 px via `fluid()`. Mulish retirée. Les anciennes classes (`.big-title`…) restent dans `_common.scss` jusqu'à la refonte des pages.
 - **Unités** : `:root { font-size: 100% }`, valeurs écrites en px de la maquette via `px-to-rem()` (base 16). Les anciens `rem` (base 10) ont été convertis : le rendu actuel est identique.
-- **Pas encore appliqué** : les variables existent mais ne sont pas utilisées par les pages actuelles (fond blanc, Mulish). Les polices Instrument Serif, Inter Tight et JetBrains Mono ne sont pas encore chargées. Ajouter `color-scheme` (light / dark) dans les mixins `theme-light` / `theme-dark` au moment où les pages utiliseront les variables.
+- **Pas encore appliqué** : les variables existent mais ne sont pas utilisées par les pages actuelles (fond blanc, Mulish). Les polices Instrument Serif et Inter Tight ne sont pas encore chargées. Ajouter `color-scheme` (light / dark) dans les mixins `theme-light` / `theme-dark` au moment où les pages utiliseront les variables.
 - **Thème** : light par défaut, choix light / dark / system via le bouton `ThemeToggle` du header. Préférence stockée dans `localStorage.theme`, appliquée sur `<html data-theme>` avant le premier rendu par `ThemeScript` (`ScriptOnce` de TanStack). Logique dans `src/providers/ThemeProvider.tsx` et `src/providers/themeContext.ts`.

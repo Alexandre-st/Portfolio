@@ -1,0 +1,117 @@
+@use "../function/function" as *;
+
+/* == TITRES ==  */
+.text-display,
+.text-page-title,
+.text-section-title,
+.text-subtitle,
+.text-card-title,
+.text-item-title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+/* Hero */
+.text-display {
+  font-size: fluid(40, 104);
+  line-height: 1.08;
+  letter-spacing: -0.043em;
+}
+
+/* En-têtes de page, bloc CTA */
+.text-page-title {
+  font-size: fluid(40, 84);
+  line-height: 1.1;
+  letter-spacing: -0.042em;
+}
+
+/* Titres de section */
+.text-section-title {
+  font-size: fluid(34, 56);
+  line-height: 1.12;
+  letter-spacing: -0.042em;
+}
+
+/* Projet précédent / suivant */
+.text-subtitle {
+  font-size: fluid(24, 34);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+/* Cartes de projet, titre du formulaire */
+.text-card-title {
+  font-size: fluid(22, 28);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+/* Lignes de projet, étapes, chiffres clés */
+.text-item-title {
+  font-size: fluid(17, 22);
+  line-height: 1.3;
+  letter-spacing: -0.028em;
+}
+
+/* Mot mis en valeur dans un titre */
+.text-accent {
+  font-family: var(--font-display);
+  font-size: 1.12em;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.text-quote {
+  font-family: var(--font-display);
+  font-size: fluid(23, 30);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+/* == CORPS ==  */
+.text-lead,
+.text-body,
+.text-body-sm,
+.text-caption,
+.text-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+/* Accroche d'un projet, intro de contact */
+.text-lead {
+  font-size: fluid(17, 26);
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+}
+
+/* Paragraphes */
+.text-body {
+  font-size: fluid(15.5, 17);
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+}
+
+/* Notes, compétences, méta */
+.text-body-sm {
+  font-size: fluid(14.5, 15);
+  line-height: 1.6;
+}
+
+/* Descriptions de carte, mentions */
+.text-caption {
+  font-size: fluid(13, 14);
+  line-height: 1.55;
+}
+
+/* Surtitres, libellés de méta */
+.text-label {
+  font-size: px-to-rem(11);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}

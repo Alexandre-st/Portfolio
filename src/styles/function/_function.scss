@@ -9,3 +9,14 @@
   }
   @return math.div($pixel, $base) * 1rem;
 }
+
+@function fluid($min, $max, $min-vw: 390, $max-vw: 1440) {
+  $slope: math.div($max - $min, $max-vw - $min-vw);
+  $intercept: $min - $slope * $min-vw;
+  $vw: math.div(math.round($slope * 100 * 10000), 10000) * 1vw;
+  @return clamp(
+    #{px-to-rem($min)},
+    #{px-to-rem($intercept)} + #{$vw},
+    #{px-to-rem($max)}
+  );
+}
